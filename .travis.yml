@@ -1,0 +1,31 @@
+sudo: false
+
+language: "node_js"
+
+jobs:
+  include:
+    - stage: test
+      node_js: lts/*
+# Uncomment to modify test script (default: npm test)
+#       script:
+#         - npm run lint
+#         - "./setup.test.sh"
+# Uncomment to publish to npm
+#     - stage: release
+#       if: branch = master
+#       node_js: lts/*
+#       script: skip
+#       deploy:
+#         provider: script
+#         skip_cleanup: true
+#         script:
+#           - npx semantic-release
+
+notifications:
+  slack:
+    rooms:
+      secure: m6Tb3Y1HwGPRvP6UDA1Kq33VFI20EnpdcHFXnF7oDCzKGCfmGVb2dUL0kQfFLEZAWMDQNg/QHKACypN8r9Qkw2RKN/ZKB3mzFvjSwJPo05aIJdviBW4nWzh4fWA6W5cFtqy6LOOF5/3a9DTba7d1mgRFN258mLQ41G5AbQisJYLO/ramZx0tzXs0OoSJfDDkxozIMvkbiTJyvD7BWPssY5K3PIJo9u3/Di5PqwOnzsEGbKyVt9wYJZjDje6i1b35s/gPU2sAj66YEmIH/QjAOwe5kj93SnL7i+L2gGzNUniPDZH0kWyQfcIvmSwSDiCH1uPeuT0SVIqYoXmDaWgzi38jz/XMsmSD2Ah0A1ACDgAADepWYLtvgqa9uHpS7z0PAlSAJCkrMkVtS5ttOAmoTgqhWcoH/YhliW1dHMkNwdQ4A1/rnjXzRYPVNfvR8J9UumjgJ4w84e6z/9SiA2L3yOBmChvI6H8Fa1Offhrv2/vwh+ueqED3QloGqQpo2VzcMPJ4pKJ3bbG+/C22Ubq7d47uTzJiNZIDwZ59c+Gk7RrZ0FpA+u2uOF9GXfEoJHbnS8qbv72bsDTp4n32kMekwDAQcKnfGXXlDpCimjt4wdlb1wGMJtE7ldz+qLRHMYfmRkpn5Hs2Frila4c6UKmXBFYHzPIiDK+ZLA9N5x5SQog=
+    template:
+      - "Build <%{build_url}|%{result}> for %{repository_slug}@%{branch} (<%{compare_url}|%{commit}>)"
+    on_success: change
+    on_failure: always

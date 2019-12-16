@@ -1,0 +1,64 @@
+{
+  "name": "@eliasnorrby/dotfiles-cli",
+  "version": "0.0.0-development",
+  "description": "CLI for eliasnorrby/dotfiles",
+  "main": "./lib/index.js",
+  "bin": {
+    "boom": "./lib/index.js"
+  },
+  "scripts": {
+    "test": "jest",
+    "program": "node ./lib/index.js",
+    "build": "tsc -p .",
+    "semantic-release": "semantic-release",
+    "check-format": "prettier --list-different '**/*.{js,jsx,ts,tsx,html,vue,css,less,scss,graphql,yaml,yml,json,md,mdx}'",
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx,html,vue,css,less,scss,graphql,yaml,yml,json,md,mdx}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eliasnorrby/dotfiles-cli.git"
+  },
+  "keywords": [
+    "dotfiles",
+    "cli"
+  ],
+  "author": "Elias Norrby",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eliasnorrby/dotfiles-cli/issues"
+  },
+  "homepage": "https://github.com/eliasnorrby/dotfiles-cli#readme",
+  "dependencies": {
+    "@types/js-yaml": "^3.12.1",
+    "@types/node": "^12.12.18",
+    "@types/prettier": "^1.19.0",
+    "@types/yargs": "^13.0.3",
+    "chalk": "^3.0.0",
+    "js-yaml": "^3.13.1",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3",
+    "yargs": "^15.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@eliasnorrby/commitlint-config": "^2.2.3",
+    "@eliasnorrby/jest-config": "^1.0.1",
+    "@eliasnorrby/prettier-config": "^2.4.4",
+    "@eliasnorrby/semantic-release-config": "^2.1.4",
+    "@types/jest": "^24.0.23",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "semantic-release": "^15.13.31",
+    "ts-jest": "^24.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
