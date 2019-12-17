@@ -38,8 +38,15 @@ export function readTopicConfig(settings: Settings, topicName: string) {
   log.info("Not implemented yet :)");
 }
 
-export function writeConfig(settings: Settings, topics: TopicGroupList) {
-  const OUTPUT_FILE = settings.outfile || settings.rootfile;
+export function writeConfig(
+  settings: Settings,
+  topics: TopicGroupList,
+  file?: string,
+) {
+  const { dotfiles, outfile, rootfile } = settings;
+  const fileToWrite = file || outfile || rootfile;
+  const filePath = path.resolve(dotfiles, fileToWrite);
+
   // convert object to yaml
   let yamlStr = yaml.safeDump({ topics });
 
@@ -47,45 +54,17 @@ export function writeConfig(settings: Settings, topics: TopicGroupList) {
   const formattedYamlStr = prettier.format(yamlStr, { parser: "yaml" });
 
   // write yaml header
-  fs.writeFileSync(OUTPUT_FILE, "---\n", "utf8");
-
-  // append topic configuration
-  fs.appendFileSync(OUTPUT_FILE, formattedYamlStr, "utf8");
-}
-
-export function enableTopic(settings: Settings, argv: any, topicName: string) {
-  const validateTopic = (topicName: string): Topic => {
-    const [group, name] = topicName.split("/");
-
-    if (!topicGroups[group]) {
-      log.error(`Group ${group} does not exist.`);
-      process.exit();
-    }
-
-    const topicList = topicGroups[group];
-    const topic = topicList.filter(t => t.name === name);
-
-    if (topic.length === 0) {
-      log.error(`Topic ${name} does not exist in group ${group}.`);
-      process.exit();
-    }
-
-    return topic[0];
-  };
-
-  const topicGroups = readConfig(settings, argv);
-
-  const topic = validateTopic(topicName);
-
-  if (topic.state === "present") {
-    log.skip(`Topic ${topicName} is already enabled!`);
+  try {
+    fs.writeFileSync(filePath, "---\n", "utf8");
+    fs.appendFileSync(filePath, formattedYamlStr, "utf8");
+  } catch (e) {
+    log.error("There was an error writing the config file.");
+    console.log(e);
+    process.exitCode = 1;
     process.exit();
   }
-  topic.state = "present";
 
-  writeConfig(settings, topicGroups);
-
-  log.info(`Topic ${topicName} enabled!`);
+  // append topic configuration
 }
 
 export function runPlaybook(settings: Settings, argv: any) {
