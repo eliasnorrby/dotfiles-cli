@@ -7,6 +7,8 @@ import { State } from "../model/state";
 import { Topic, TopicGroupList } from "../model/topic";
 import Settings from "../settings/iSettings";
 import log from "../utils/log";
+import stateVerb from "./stateVerb";
+import stateIcon from "./stateIcon";
 
 export function readConfig(settings: Settings, argv: any, file?: string) {
   const { dotfiles, rootfile } = settings;
@@ -80,15 +82,15 @@ export function writeTopicState(
   const topicGroups = readConfig(settings, argv);
   const topic = getTopicFromGroups(topicGroups, topicName);
 
-  if (topic.state === "present") {
-    log.skip(`Topic ${topicName} is already enabled!`);
+  if (topic.state === state) {
+    log.skip(`Topic ${topicName} is already ${stateVerb(state)}d!`);
     process.exit();
   }
-  topic.state = "present";
+  topic.state = state;
 
   writeConfig(settings, topicGroups);
 
-  log.info(`Topic ${topicName} enabled!`);
+  console.log(`${stateIcon(state)} Topic ${topicName} ${stateVerb(state)}d!`);
 }
 
 const getTopicFromGroups = (
