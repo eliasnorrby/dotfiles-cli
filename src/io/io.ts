@@ -1,13 +1,11 @@
-import path from "path";
-import fs from "fs";
-
-import yaml from "js-yaml";
-import prettier from "prettier";
 import execa from "execa";
-
+import fs from "fs";
+import yaml from "js-yaml";
+import path from "path";
+import prettier from "prettier";
+import { State } from "../model/state";
 import { Topic, TopicGroupList } from "../model/topic";
 import Settings from "../settings/iSettings";
-
 import log from "../utils/log";
 
 export function readConfig(settings: Settings, argv: any, file?: string) {
@@ -47,15 +45,15 @@ export function writeConfig(
   const fileToWrite = file || outfile || rootfile;
   const filePath = path.resolve(dotfiles, fileToWrite);
 
-  // convert object to yaml
-  let yamlStr = yaml.safeDump({ topics });
-
-  // format yaml string
-  const formattedYamlStr = prettier.format(yamlStr, { parser: "yaml" });
-
-  // write yaml header
   try {
+    // convert object to yaml
+    let yamlStr = yaml.safeDump({ topics });
+
+    // format yaml string
+    const formattedYamlStr = prettier.format(yamlStr, { parser: "yaml" });
+    // write yaml header
     fs.writeFileSync(filePath, "---\n", "utf8");
+    // append topic configuration
     fs.appendFileSync(filePath, formattedYamlStr, "utf8");
   } catch (e) {
     log.error("There was an error writing the config file.");
@@ -63,8 +61,6 @@ export function writeConfig(
     process.exitCode = 1;
     process.exit();
   }
-
-  // append topic configuration
 }
 
 export function runPlaybook(settings: Settings, argv: any) {
@@ -74,3 +70,45 @@ export function runPlaybook(settings: Settings, argv: any) {
 
   subprocess.stdout?.pipe(process.stdout);
 }
+
+export function writeTopicState(
+  settings: Settings,
+  argv: any,
+  topicName: string,
+  state: State,
+) {
+  const topicGroups = readConfig(settings, argv);
+  const topic = getTopicFromGroups(topicGroups, topicName);
+
+  if (topic.state === "present") {
+    log.skip(`Topic ${topicName} is already enabled!`);
+    process.exit();
+  }
+  topic.state = "present";
+
+  writeConfig(settings, topicGroups);
+
+  log.info(`Topic ${topicName} enabled!`);
+}
+
+const getTopicFromGroups = (
+  topicGroups: TopicGroupList,
+  topicName: string,
+): Topic => {
+  const [group, name] = topicName.split("/");
+
+  if (!topicGroups[group]) {
+    log.error(`Group ${group} does not exist.`);
+    process.exit();
+  }
+
+  const topicList = topicGroups[group];
+  const topic = topicList.filter(t => t.name === name);
+
+  if (topic.length === 0) {
+    log.error(`Topic ${name} does not exist in group ${group}.`);
+    process.exit();
+  }
+
+  return topic[0];
+};
