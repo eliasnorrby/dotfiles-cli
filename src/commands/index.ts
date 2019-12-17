@@ -1,2 +1,2 @@
 export { default as listTopics } from "./listTopics";
-export { default as enableTopic } from "./enableTopic";
+export { default as setTopicState } from "./setTopicState";
