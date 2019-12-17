@@ -41,7 +41,32 @@ yargs
       setTopicState(settings, argv, argv.topic, "present");
     },
   )
-
+  .command(
+    "disable <topic>",
+    "disable a topic",
+    yargs => {
+      yargs.positional("topic", {
+        describe: "topic to disable",
+        type: "string",
+      });
+    },
+    (argv: any) => {
+      setTopicState(settings, argv, argv.topic, "disabled");
+    },
+  )
+  .command(
+    "remove <topic>",
+    "remove a topic",
+    yargs => {
+      yargs.positional("topic", {
+        describe: "topic to remove",
+        type: "string",
+      });
+    },
+    (argv: any) => {
+      setTopicState(settings, argv, argv.topic, "absent");
+    },
+  )
   .command("deploy [options]", "deploy configuration", argv => {
     try {
       log.info("Deploying configuration with ansible...");
