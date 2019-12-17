@@ -1,14 +1,14 @@
 import { mocked } from "ts-jest/utils";
-import loadConfig from "./loadConfig";
+import loadSettings from "./loadSettings";
 import requireFile from "./requireFile";
 jest.mock("./requireFile");
 
-describe("loadConfig", () => {
+describe("loadSettings", () => {
   it("should return a config", () => {
     const mockedRequire = mocked(requireFile);
     mockedRequire.mockReturnValueOnce({ setting: "Hello World!" });
 
-    const settings = loadConfig(["mock-location"]);
+    const settings = loadSettings(["mock-location"]);
     expect(settings).toBeDefined();
     expect(settings.setting).toBe("Hello World!");
   });
