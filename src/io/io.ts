@@ -10,13 +10,12 @@ import Settings from "../settings/iSettings";
 
 import log from "../utils/log";
 
-import stateIcon from "./stateIcon";
-
-export function readRootConfig(settings: Settings, argv: any) {
+export function readConfig(settings: Settings, argv: any, file?: string) {
   const { dotfiles, rootfile } = settings;
+  const fileToRead = file || rootfile;
   try {
     const fileContents = fs.readFileSync(
-      path.resolve(dotfiles, rootfile),
+      path.resolve(dotfiles, fileToRead),
       "utf8",
     );
     const data: { topics: TopicGroupList } = yaml.safeLoad(fileContents);
@@ -54,20 +53,6 @@ export function writeConfig(settings: Settings, topics: TopicGroupList) {
   fs.appendFileSync(OUTPUT_FILE, formattedYamlStr, "utf8");
 }
 
-export function listTopics(settings: Settings, argv: any) {
-  const topicGroups = readRootConfig(settings, argv);
-
-  const groups = Object.keys(topicGroups);
-
-  for (const g of groups) {
-    console.log(`\n---- ${g} ----`);
-    for (const t of topicGroups[g]) {
-      const { state, name } = t;
-      console.log(`${stateIcon(state)} : ${name}`);
-    }
-  }
-}
-
 export function enableTopic(settings: Settings, argv: any, topicName: string) {
   const validateTopic = (topicName: string): Topic => {
     const [group, name] = topicName.split("/");
@@ -88,7 +73,7 @@ export function enableTopic(settings: Settings, argv: any, topicName: string) {
     return topic[0];
   };
 
-  const topicGroups = readRootConfig(settings, argv);
+  const topicGroups = readConfig(settings, argv);
 
   const topic = validateTopic(topicName);
 

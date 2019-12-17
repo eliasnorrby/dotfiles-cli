@@ -3,7 +3,8 @@
 import os from "os";
 
 import yargs from "yargs";
-import { enableTopic, listTopics, runPlaybook } from "./io";
+import { enableTopic, runPlaybook } from "./io";
+import { listTopics } from "./commands";
 import Settings from "./settings/iSettings";
 import loadSettings from "./settings/loadSettings";
 import log from "./utils/log";
