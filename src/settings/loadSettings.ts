@@ -1,6 +1,6 @@
 import requireFile from "./requireFile";
 
-export default function loadConfig(locations: string[]) {
+export default function loadSettings(locations: string[]) {
   for (const location of locations) {
     try {
       // TODO: proceed to check other locations
