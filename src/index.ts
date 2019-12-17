@@ -4,7 +4,7 @@ import os from "os";
 
 import yargs from "yargs";
 import { runPlaybook } from "./io";
-import { enableTopic, listTopics } from "./commands";
+import { setTopicState, listTopics } from "./commands";
 import Settings from "./settings/iSettings";
 import loadSettings from "./settings/loadSettings";
 import log from "./utils/log";
@@ -38,7 +38,7 @@ yargs
       });
     },
     (argv: any) => {
-      enableTopic(settings, argv, argv.topic);
+      setTopicState(settings, argv, argv.topic, "present");
     },
   )
 
