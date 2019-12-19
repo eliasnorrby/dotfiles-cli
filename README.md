@@ -13,8 +13,8 @@ CLI for [my dotfiles][dotfiles-link].
 npm install -g @eliasnorrby/dotfiles-cli
 ```
 
-The CLI is available under the name `boom` (:boom:). It's just a placeholder for
-now. :wave: [doom](doom-link)
+The CLI is available under the name `boom` :boom:. It's just a placeholder for
+now. Hello there, [doom](doom-link). :wave:
 
 ## Commands
 
