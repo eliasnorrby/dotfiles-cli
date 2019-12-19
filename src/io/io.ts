@@ -5,7 +5,7 @@ import prettier from "prettier";
 import { State } from "../model/state";
 import { Topic, TopicGroupList } from "../model/topic";
 import Settings from "../settings/iSettings";
-import log from "../utils/log";
+import {log} from "@eliasnorrby/log-util";
 import stateVerb from "./stateVerb";
 import stateIcon from "./stateIcon";
 
@@ -20,16 +20,14 @@ export function readConfig(settings: Settings, argv: any, file?: string) {
     const data: { topics: TopicGroupList } = yaml.safeLoad(fileContents);
 
     if (data.topics === undefined) {
-      log.error("Could not read config, exiting.");
-      process.exitCode = 1;
-      process.exit();
+      log.fail("Could not read config, exiting.");
+      process.exit(1);
     }
     return data.topics;
   } catch (e) {
-    log.error("There was an error reading the config file.");
+    log.fail("There was an error reading the config file.");
     console.log(e);
-    process.exitCode = 1;
-    process.exit();
+    process.exit(1);
   }
 }
 
@@ -56,10 +54,9 @@ export function writeConfig(
     // append topic configuration
     fs.appendFileSync(filePath, formattedYamlStr, "utf8");
   } catch (e) {
-    log.error("There was an error writing the config file.");
+    log.fail("There was an error writing the config file.");
     console.log(e);
-    process.exitCode = 1;
-    process.exit();
+    process.exit(1);
   }
 }
 
@@ -90,7 +87,7 @@ const getTopicFromGroups = (
   const [group, name] = topicName.split("/");
 
   if (!topicGroups[group]) {
-    log.error(`Group ${group} does not exist.`);
+    log.fail(`Group ${group} does not exist.`);
     process.exit();
   }
 
@@ -98,7 +95,7 @@ const getTopicFromGroups = (
   const topic = topicList.filter(t => t.name === name);
 
   if (topic.length === 0) {
-    log.error(`Topic ${name} does not exist in group ${group}.`);
+    log.fail(`Topic ${name} does not exist in group ${group}.`);
     process.exit();
   }
 

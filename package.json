@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/eliasnorrby/dotfiles-cli#readme",
   "dependencies": {
+    "@eliasnorrby/log-util": "^1.1.0",
     "@types/js-yaml": "^3.12.1",
     "@types/node": "^12.12.18",
     "@types/prettier": "^1.19.0",
