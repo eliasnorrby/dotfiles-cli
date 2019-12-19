@@ -5,7 +5,7 @@ import prettier from "prettier";
 import { State } from "../model/state";
 import { Topic, TopicGroupList } from "../model/topic";
 import Settings from "../settings/iSettings";
-import {log} from "@eliasnorrby/log-util";
+import { log } from "@eliasnorrby/log-util";
 import stateVerb from "./stateVerb";
 import stateIcon from "./stateIcon";
 
@@ -32,7 +32,23 @@ export function readConfig(settings: Settings, argv: any, file?: string) {
 }
 
 export function readTopicConfig(settings: Settings, topicName: string) {
-  log.info("Not implemented yet :)");
+  const { dotfiles } = settings;
+  const fileToRead = path.resolve(dotfiles, topicName, "topic.config.yml");
+  const shortName = topicName.split("/")[1];
+  const fieldName = shortName + "_config";
+  try {
+    const fileContents = fs.readFileSync(fileToRead, "utf8");
+    const data = yaml.safeLoad(fileContents);
+    if (data[fieldName] === undefined) {
+      log.fail(`Could not read config for topic ${topicName}, exiting.`);
+      process.exit(1);
+    }
+    return data[fieldName];
+  } catch (e) {
+    log.fail("There was an error reading the config file.");
+    console.log(e);
+    process.exit(1);
+  }
 }
 
 export function writeConfig(
@@ -78,6 +94,11 @@ export function writeTopicState(
   writeConfig(settings, topicGroups);
 
   console.log(`${stateIcon(state)} Topic ${topicName} ${stateVerb(state)}d!`);
+}
+
+export function readTopic(settings: Settings, argv: any, topicName: string) {
+  const topicGroups = readConfig(settings, argv);
+  return getTopicFromGroups(topicGroups, topicName);
 }
 
 const getTopicFromGroups = (

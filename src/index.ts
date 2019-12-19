@@ -3,7 +3,12 @@
 import os from "os";
 
 import yargs from "yargs";
-import { setTopicState, listTopics, runPlaybook } from "./commands";
+import {
+  setTopicState,
+  listTopics,
+  describeTopic,
+  runPlaybook,
+} from "./commands";
 import Settings from "./settings/iSettings";
 import loadSettings from "./settings/loadSettings";
 import { log } from "@eliasnorrby/log-util";
@@ -58,6 +63,19 @@ const settings: Settings = loadSettings([
       },
       (argv: any) => {
         setTopicState(settings, argv, argv.topic, "absent");
+      },
+    )
+    .command(
+      "describe <topic>",
+      "show a topic's configuration",
+      yargs => {
+        yargs.positional("topic", {
+          describe: "topic to describe",
+          type: "string",
+        });
+      },
+      (argv: any) => {
+        describeTopic(settings, argv, argv.topic);
       },
     )
     .command("deploy [options]", "deploy configuration", {}, async argv => {
