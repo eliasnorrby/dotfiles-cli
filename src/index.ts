@@ -15,7 +15,6 @@ const settings: Settings = loadSettings([
 
 (async () => {
   yargs
-    .alias("v", "version")
     .usage("Usage: $0 [options]")
     .help("h")
     .alias("h", "help")
@@ -61,7 +60,7 @@ const settings: Settings = loadSettings([
         setTopicState(settings, argv, argv.topic, "absent");
       },
     )
-    .command("deploy [options]", "deploy configuration", async argv => {
+    .command("deploy [options]", "deploy configuration", {}, async argv => {
       try {
         log.info("Deploying configuration with ansible...");
         await runPlaybook(settings, argv);
@@ -72,10 +71,10 @@ const settings: Settings = loadSettings([
         log.fail("Exiting.");
       }
     })
-    // .option("verbose", {
-    //   alias: "v",
-    //   type: "boolean",
-    //   description: "Run with verbose logging",
-    // })
+    .option("verbose", {
+      alias: "v",
+      type: "boolean",
+      description: "Run with verbose logging",
+    })
     .strict(true).argv;
 })();

@@ -8,11 +8,12 @@ export default async function runPlaybook(settings: Settings, argv: any) {
     text: "Running playbook...",
     spinner: "pipe",
     color: "yellow",
-  }).start();
+  });
+  !argv.verbose && spinner.start();
   await execa(deployScript, {
-    stdio: "inherit",
+    stdio: argv.verbose ? "inherit" : "pipe",
     cwd: provisionDir,
     shell: true,
   });
-  spinner.succeed("Done");
+  !argv.verbose && spinner.succeed("Done");
 }

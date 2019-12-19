@@ -7,6 +7,6 @@ export const defaultSettings: Settings = {
   rootfile: "root.config.yml",
   playbook: "playbook.yml",
   provisionDir: path.resolve(os.homedir(), ".dotfiles", "_provision"),
-  // deployScript: "./run-playbook.zsh",
-  deployScript: "./sleep-3.zsh",
+  deployScript: "./run-playbook.zsh",
+  // deployScript: "./sleep-3.zsh",
 };
