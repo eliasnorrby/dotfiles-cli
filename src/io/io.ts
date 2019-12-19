@@ -1,4 +1,3 @@
-import execa from "execa";
 import fs from "fs";
 import yaml from "js-yaml";
 import path from "path";
@@ -50,7 +49,6 @@ export function writeConfig(
   try {
     // convert object to yaml
     let yamlStr = yaml.safeDump({ topics });
-
     // format yaml string
     const formattedYamlStr = prettier.format(yamlStr, { parser: "yaml" });
     // write yaml header
@@ -63,14 +61,6 @@ export function writeConfig(
     process.exitCode = 1;
     process.exit();
   }
-}
-
-export function runPlaybook(settings: Settings, argv: any) {
-  const deployScript = path.resolve(settings.bindir, "run-playbook.zsh");
-  const { playbook } = settings;
-  const subprocess = execa(deployScript, [playbook]);
-
-  subprocess.stdout?.pipe(process.stdout);
 }
 
 export function writeTopicState(

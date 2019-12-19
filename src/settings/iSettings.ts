@@ -3,6 +3,6 @@ export default interface Settings {
   rootfile: string;
   outfile?: string;
   playbook: string;
-  clipath: string;
-  bindir: string;
+  provisionDir: string;
+  deployScript: string;
 }
