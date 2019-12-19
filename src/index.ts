@@ -3,8 +3,7 @@
 import os from "os";
 
 import yargs from "yargs";
-import { runPlaybook } from "./io";
-import { setTopicState, listTopics } from "./commands";
+import { setTopicState, listTopics, runPlaybook } from "./commands";
 import Settings from "./settings/iSettings";
 import loadSettings from "./settings/loadSettings";
 import log from "./utils/log";
@@ -70,7 +69,6 @@ yargs
   .command("deploy [options]", "deploy configuration", argv => {
     try {
       log.info("Deploying configuration with ansible...");
-      console.log("Bin dir: ", settings.bindir);
       runPlaybook(settings, argv);
       log.info("Done! ✨");
     } catch (e) {
