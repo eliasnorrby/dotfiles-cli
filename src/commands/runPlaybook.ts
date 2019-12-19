@@ -1,11 +1,18 @@
 import execa from "execa";
+import ora from "ora";
 import Settings from "../settings/iSettings";
 
-export default function runPlaybook(settings: Settings, argv: any) {
+export default async function runPlaybook(settings: Settings, argv: any) {
   const { provisionDir, deployScript } = settings;
-  execa.sync(deployScript, {
+  const spinner = ora({
+    text: "Running playbook...",
+    spinner: "pipe",
+    color: "yellow",
+  }).start();
+  await execa(deployScript, {
     stdio: "inherit",
     cwd: provisionDir,
     shell: true,
   });
+  spinner.succeed("Done");
 }
