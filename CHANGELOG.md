@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/eliasnorrby/dotfiles-cli/compare/v1.0.1...v1.1.0) (2019-12-20)
+
+
+### Features
+
+* add update command ([f093f36](https://github.com/eliasnorrby/dotfiles-cli/commit/f093f365fe2368af57ec785c61f407729f4c208f))
+
 ## [1.0.1](https://github.com/eliasnorrby/dotfiles-cli/compare/v1.0.0...v1.0.1) (2019-12-20)
 
 
