@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/eliasnorrby/dotfiles-cli/compare/v1.0.0...v1.0.1) (2019-12-20)
+
+
+### Bug Fixes
+
+* publish only lib directory ([1ff58f1](https://github.com/eliasnorrby/dotfiles-cli/commit/1ff58f1cf10b05bc1755fbfce89582128a76a3c5))
+
 # 1.0.0 (2019-12-19)
 
 
