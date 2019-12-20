@@ -34,9 +34,15 @@ Disable a topic (i.e. set its state to `disabled` in `.dotfiles/root.config.yml`
 
 Remove a topic (i.e. set its state to `absent` in `.dotfiles/root.config.yml`).
 
-### `deploy`
+### `update [-v]`
 
-Run the configured ansible playbook to deploy the dotfile configuration.
+Run the configured update script (eg. for `zplug`, `vim-plug`, `brew`),
+optionally with verbose output.
+
+### `deploy [-v]`
+
+Run the configured ansible playbook to deploy the dotfile configuration,
+optionally with verbose output.
 
 [travis-badge]: https://img.shields.io/travis/com/eliasnorrby/dotfiles-cli?style=flat
 [travis-link]: https://travis-ci.com/eliasnorrby/dotfiles-cli
