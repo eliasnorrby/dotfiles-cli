@@ -8,6 +8,7 @@ import {
   listTopics,
   describeTopic,
   runPlaybook,
+  runUpdate,
 } from "./commands";
 import Settings from "./settings/iSettings";
 import loadSettings from "./settings/loadSettings";
@@ -76,6 +77,22 @@ const settings: Settings = loadSettings([
       },
       (argv: any) => {
         describeTopic(settings, argv, argv.topic);
+      },
+    )
+    .command(
+      "update [options]",
+      "update zsh, vim, brew, doom",
+      {},
+      async argv => {
+        try {
+          log.info("Running update script...");
+          await runUpdate(settings, argv);
+          log.ok("Done! ✨");
+        } catch (e) {
+          log.fail("An error occured during the update:");
+          console.log(e);
+          log.fail("Exiting.");
+        }
       },
     )
     .command("deploy [options]", "deploy configuration", {}, async argv => {

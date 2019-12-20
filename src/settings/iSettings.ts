@@ -5,4 +5,5 @@ export default interface Settings {
   playbook: string;
   provisionDir: string;
   deployScript: string;
+  updateScript: string;
 }
