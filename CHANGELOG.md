@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/eliasnorrby/dotfiles-cli/compare/v1.1.0...v1.1.1) (2019-12-22)
+
+
+### Bug Fixes
+
+* **deps:** bump execa from 3.4.0 to 4.0.0 ([839caf6](https://github.com/eliasnorrby/dotfiles-cli/commit/839caf6ab2fc3c6dc5aa72cc276fb3e777d3c2ea))
+
 # [1.1.0](https://github.com/eliasnorrby/dotfiles-cli/compare/v1.0.1...v1.1.0) (2019-12-20)
 
 
