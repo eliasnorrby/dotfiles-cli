@@ -51,7 +51,7 @@
     "@eliasnorrby/semantic-release-config": "^2.1.4",
     "@types/jest": "^24.0.23",
     "@types/js-yaml": "^3.12.1",
-    "@types/node": "^12.12.21",
+    "@types/node": "^13.1.0",
     "@types/prettier": "^1.19.0",
     "@types/yargs": "^13.0.3",
     "husky": "^3.1.0",
