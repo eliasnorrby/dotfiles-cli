@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/eliasnorrby/dotfiles-cli/compare/v1.1.2...v1.1.3) (2020-01-13)
+
+
+### Bug Fixes
+
+* **deps:** move ts-node to devDependencies ([ff844fa](https://github.com/eliasnorrby/dotfiles-cli/commit/ff844fa8568206d19ca97cacfd5de5a64012c35c)), closes [#28](https://github.com/eliasnorrby/dotfiles-cli/issues/28)
+
 ## [1.1.2](https://github.com/eliasnorrby/dotfiles-cli/compare/v1.1.1...v1.1.2) (2020-01-02)
 
 
