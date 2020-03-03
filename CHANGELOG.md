@@ -1,3 +1,16 @@
+# [1.2.0](https://github.com/eliasnorrby/dotfiles-cli/compare/v1.1.3...v1.2.0) (2020-03-03)
+
+
+### Bug Fixes
+
+* typos in runUpdate ([bca52c1](https://github.com/eliasnorrby/dotfiles-cli/commit/bca52c1aacff79881511d16d990a8b5723868dc5))
+
+
+### Features
+
+* **deploy:** add topic flag ([df88386](https://github.com/eliasnorrby/dotfiles-cli/commit/df88386775624f56969d4d31d6261b0e85511700))
+* **deploy:** allow selecting multiple targets ([9fa6d10](https://github.com/eliasnorrby/dotfiles-cli/commit/9fa6d10b5d67a9a8ca4b15fd7f1ee04bb31f9b09))
+
 ## [1.1.3](https://github.com/eliasnorrby/dotfiles-cli/compare/v1.1.2...v1.1.3) (2020-01-13)
 
 
