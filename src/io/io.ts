@@ -96,16 +96,43 @@ export function writeTopicState(
   console.log(`${stateIcon(state)} Topic ${topicName} ${stateVerb(state)}d!`);
 }
 
+export function selectTopic(settings: Settings, argv: any, topicName: string) {
+  const topic = readTopic(settings, argv, argv.topic);
+  const group = splitGroupAndName(topicName)[0];
+  const temporaryRootConfig: TopicGroupList = { [group]: [topic] };
+
+  try {
+    let yamlStr = yaml.safeDump({ topics: temporaryRootConfig });
+    // format yaml string
+    const formattedYamlStr = prettier.format(yamlStr, { parser: "yaml" });
+    log.info("Writing temporary config:");
+    console.log(formattedYamlStr);
+    writeConfig(settings, temporaryRootConfig, settings.localfile);
+  } catch (err) {
+    log.fail("Error writing temporary config.");
+    console.log(err);
+  }
+}
+
+export function cleanSelected(settings: Settings) {
+  const { dotfiles, localfile } = settings;
+  const filePathToRemove = path.resolve(dotfiles, localfile);
+  log.info(`Removing ${filePathToRemove}`);
+  fs.unlinkSync(filePathToRemove);
+}
+
 export function readTopic(settings: Settings, argv: any, topicName: string) {
   const topicGroups = readConfig(settings, argv);
   return getTopicFromGroups(topicGroups, topicName);
 }
 
+const splitGroupAndName = (topicName: string) => topicName.split("/");
+
 const getTopicFromGroups = (
   topicGroups: TopicGroupList,
   topicName: string,
 ): Topic => {
-  const [group, name] = topicName.split("/");
+  const [group, name] = splitGroupAndName(topicName);
 
   if (!topicGroups[group]) {
     log.fail(`Group ${group} does not exist.`);

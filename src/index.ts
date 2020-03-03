@@ -95,16 +95,31 @@ const settings: Settings = loadSettings([
         }
       },
     )
-    .command("deploy [options]", "deploy configuration", {}, async argv => {
-      try {
-        log.info("Deploying configuration with ansible...");
-        await runPlaybook(settings, argv);
-        log.ok("Done! ✨");
-      } catch (e) {
-        log.fail("An error occured during the playbook run:");
-        console.log(e);
-        log.fail("Exiting.");
-      }
+    .command(
+      "deploy [options]",
+      "deploy configuration",
+      yargs => {
+        yargs.option("topic", {
+          alias: "t",
+          describe: "topic to deploy",
+          type: "string",
+        });
+      },
+      async argv => {
+        try {
+          log.info("Deploying configuration with ansible...");
+          await runPlaybook(settings, argv);
+          log.ok("Done! ✨");
+        } catch (e) {
+          log.fail("An error occured during the playbook run:");
+          console.log(e);
+          log.fail("Exiting.");
+        }
+      },
+    )
+    .command("settings", "show settings", {}, () => {
+      log.info("Current settings:");
+      console.log(settings);
     })
     .option("verbose", {
       alias: "v",
