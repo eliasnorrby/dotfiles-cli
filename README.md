@@ -39,10 +39,21 @@ Remove a topic (i.e. set its state to `absent` in `.dotfiles/root.config.yml`).
 Run the configured update script (eg. for `zplug`, `vim-plug`, `brew`),
 optionally with verbose output.
 
-### `deploy [-v]`
+### `deploy [-v] [-t topic(s)]`
 
 Run the configured ansible playbook to deploy the dotfile configuration,
 optionally with verbose output.
+
+Use the `-t` (`--topic`) flag to limit which topics to deploy. Pass a single
+topic name or a comma separated list:
+
+``` bash
+# Single topic deployment
+boom deploy -t shell/zsh
+
+# Multiple topic deployment
+boom deploy -t shell/zsh,shell/git,editor/vscode
+```
 
 [travis-badge]: https://img.shields.io/travis/com/eliasnorrby/dotfiles-cli?style=flat
 [travis-link]: https://travis-ci.com/eliasnorrby/dotfiles-cli
