@@ -3,7 +3,7 @@ import ora from "ora";
 import { Color } from "ora";
 import Settings from "../settings/iSettings";
 
-export default async function runPlaybook(settings: Settings, argv: any) {
+export default async function runUpdate(settings: Settings, argv: any) {
   const { provisionDir, updateScript } = settings;
 
   const subprocess = execa(updateScript, {
@@ -15,7 +15,7 @@ export default async function runPlaybook(settings: Settings, argv: any) {
   if (argv.verbose) {
     await subprocess;
   } else {
-    const spinner = colordSpinner("Updating...");
+    const spinner = coloredSpinner("Updating...");
     spinner.start();
 
     await subprocess;
@@ -24,7 +24,7 @@ export default async function runPlaybook(settings: Settings, argv: any) {
   }
 }
 
-const colordSpinner = (text: string) => {
+const coloredSpinner = (text: string) => {
   const colors: Color[] = [
     "red",
     "green",
