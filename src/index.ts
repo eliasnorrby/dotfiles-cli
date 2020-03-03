@@ -101,7 +101,7 @@ const settings: Settings = loadSettings([
       yargs => {
         yargs.option("topic", {
           alias: "t",
-          describe: "topic to deploy",
+          describe: "topic(s) to deploy (comma separated)",
           type: "string",
         });
       },
