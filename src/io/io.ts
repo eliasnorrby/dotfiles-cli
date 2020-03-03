@@ -96,10 +96,22 @@ export function writeTopicState(
   console.log(`${stateIcon(state)} Topic ${topicName} ${stateVerb(state)}d!`);
 }
 
-export function selectTopic(settings: Settings, argv: any, topicName: string) {
-  const topic = readTopic(settings, argv, argv.topic);
-  const group = splitGroupAndName(topicName)[0];
-  const temporaryRootConfig: TopicGroupList = { [group]: [topic] };
+export function selectTopics(
+  settings: Settings,
+  argv: any,
+  topicNames: string,
+) {
+  const nameList = topicNames.split(",");
+  log.info(`Selecting ${nameList.length} topics for deployment`);
+  const temporaryRootConfig: TopicGroupList = {};
+
+  for (const name of nameList) {
+    const topic = readTopic(settings, argv, name);
+    const group = splitGroupAndName(name)[0];
+    if (!temporaryRootConfig[group]) temporaryRootConfig[group] = [];
+
+    temporaryRootConfig[group].push(topic);
+  }
 
   try {
     let yamlStr = yaml.safeDump({ topics: temporaryRootConfig });
