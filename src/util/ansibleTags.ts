@@ -17,3 +17,10 @@ export const tagsFromFlags = (flagString: string) => {
 
   return ansibleTags;
 };
+
+export const buildTags = (operations: string) => {
+  if (!operations) return null;
+  const ansibleTags = tagsFromFlags(operations);
+  if (ansibleTags.length === 0) return null;
+  return "all," + ansibleTags;
+};
