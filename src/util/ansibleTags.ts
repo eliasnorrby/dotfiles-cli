@@ -1,15 +1,11 @@
 import { flagToTagMap } from "../constants/flagToTagMap"
 
-type Argv = {
-  flags: string;
-};
-
-export const tagsFromArgv = (argv: Argv) => {
-  if (!argv.flags) {
+export const tagsFromFlags = (flagString: string) => {
+  if (!flagString || flagString === "") {
     return "";
   }
 
-  const flags = argv.flags.split(",");
+  const flags = flagString.split(",");
 
   const ansibleTags = flagToTagMap
     .filter(
