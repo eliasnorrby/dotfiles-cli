@@ -13,6 +13,7 @@ import {
 import Settings from "./settings/iSettings";
 import loadSettings from "./settings/loadSettings";
 import { log } from "@eliasnorrby/log-util";
+import { describeFlags } from "./util/describeFlags";
 
 // TODO: Fix hardcoded config
 const settings: Settings = loadSettings([
@@ -104,8 +105,18 @@ const settings: Settings = loadSettings([
           describe: "topic(s) to deploy (comma separated)",
           type: "string",
         });
+        yargs.option("list-operations", {
+          alias: "l",
+          describe: "list available operations",
+          type: "boolean"
+        });
       },
       async argv => {
+        if (argv['list-operations']) {
+          log.info("Available operations:")
+          describeFlags()
+          return
+        }
         try {
           log.info("Deploying configuration with ansible...");
           await runPlaybook(settings, argv);
