@@ -105,6 +105,11 @@ const settings: Settings = loadSettings([
           describe: "topic(s) to deploy (comma separated)",
           type: "string",
         });
+        yargs.option("operations", {
+          alias: "o",
+          describe: "operation(s) to perform (comma separated)",
+          type: "string"
+        });
         yargs.option("list-operations", {
           alias: "l",
           describe: "list available operations",
