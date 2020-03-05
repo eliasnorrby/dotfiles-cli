@@ -1,3 +1,13 @@
+# [1.3.0](https://github.com/eliasnorrby/dotfiles-cli/compare/v1.2.0...v1.3.0) (2020-03-05)
+
+
+### Features
+
+* add 'list-operations' option to deploy ([a98a4d9](https://github.com/eliasnorrby/dotfiles-cli/commit/a98a4d9f4c54aa3e618f63c81e705937ac069f97))
+* add 'operations' option to deploy command ([dc48cbc](https://github.com/eliasnorrby/dotfiles-cli/commit/dc48cbce7dd67d160634b93123ccc89c29ee6ba3))
+* add tagsFromArgv util ([8c33660](https://github.com/eliasnorrby/dotfiles-cli/commit/8c336600dce0bd38fd27feb126e3fcfd61d5ebce))
+* add the describeFlags util ([1230a71](https://github.com/eliasnorrby/dotfiles-cli/commit/1230a7149770a0bd0303a7f1183eea078882c388))
+
 # [1.2.0](https://github.com/eliasnorrby/dotfiles-cli/compare/v1.1.3...v1.2.0) (2020-03-03)
 
 
