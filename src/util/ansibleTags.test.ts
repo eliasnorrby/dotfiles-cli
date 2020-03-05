@@ -1,98 +1,52 @@
-import { tagsFromArgv } from "./ansibleTags";
+import { tagsFromFlags } from "./ansibleTags";
 
-const ARGV_WITH_ONE_FLAG = {
-  flags: "homebrew",
-};
+const ONE_FLAG = "homebrew"
 
-const ARGV_WITH_TWO_FLAG = {
-  flags: "apps,packages",
-};
+const TWO_FLAGS = "apps,packages"
 
-const ARGV_WITH_DUPLICATE_FLAG = {
-  flags: "apps,packages,apps",
-};
+const DUPLICATE_FLAGS = "apps,packages,apps"
 
-const ARGV_WITH_SHORT_FLAG = {
-  flags: "a,p",
-};
+const SHORT_FLAGS = "a,p"
 
-const ARGV_WITH_SHORT_AND_LOG_FLAG = {
-  flags: "a,p,apps",
-};
+const SHORT_AND_LONG_FLAGS = "a,p,apps"
 
-const ARGV_WITH_INVALID_FLAG = {
-  flags: "apps,packages,imnnotavalidflag",
-};
+const INVALID_FLAG = "apps,packages,imnnotavalidflag"
 
-const ARGV_WITH_OTHER_OPTIONS = {
-  flags: "apps,packages",
-  topic: "editor/vscode,shell/zsh",
-};
+const EMPTY_FLAG = ""
 
-const ARGV_WITH_ALL_CASES = {
-  flags: "apps,defaults,invalidflag,d,p",
-  topic: "lang/kafka",
-  verbose: true,
-};
-
-const ARGV_EMPTY_FLAGS = {
-  flags: "",
-};
-
-describe("tagsFromArgv", () => {
+describe("tagsFromFlags", () => {
   it("should handle a single flag", () => {
     const expected = "do_homebrew";
-    expect(tagsFromArgv(ARGV_WITH_ONE_FLAG)).toBe(expected);
+    expect(tagsFromFlags(ONE_FLAG)).toBe(expected);
   });
 
   it("should handle two flags", () => {
     const expected = "do_mas,do_packages";
-    expect(tagsFromArgv(ARGV_WITH_TWO_FLAG)).toBe(expected);
+    expect(tagsFromFlags(TWO_FLAGS)).toBe(expected);
   });
 
   it("should handle duplicate flags", () => {
     const expected = "do_mas,do_packages";
-    expect(tagsFromArgv(ARGV_WITH_DUPLICATE_FLAG)).toBe(expected);
+    expect(tagsFromFlags(DUPLICATE_FLAGS)).toBe(expected);
   });
 
   it("should handle short flags", () => {
     const expected = "do_mas,do_packages";
-    expect(tagsFromArgv(ARGV_WITH_SHORT_FLAG)).toBe(expected);
+    expect(tagsFromFlags(SHORT_FLAGS)).toBe(expected);
   });
 
   it("should handle short and long flags", () => {
     const expected = "do_mas,do_packages";
-    expect(tagsFromArgv(ARGV_WITH_SHORT_AND_LOG_FLAG)).toBe(expected);
+    expect(tagsFromFlags(SHORT_AND_LONG_FLAGS)).toBe(expected);
   });
 
   it("should handle invalid flags", () => {
     const expected = "do_mas,do_packages";
-    expect(tagsFromArgv(ARGV_WITH_INVALID_FLAG)).toBe(expected);
+    expect(tagsFromFlags(INVALID_FLAG)).toBe(expected);
   });
 
-  it("should handle argv with other options", () => {
-    const expected = "do_mas,do_packages";
-    expect(tagsFromArgv(ARGV_WITH_OTHER_OPTIONS)).toBe(expected);
-  });
-
-  it("should handle argv with all cases at once", () => {
-    const expected = "do_mas,do_defaults,do_packages";
-    const received = tagsFromArgv(ARGV_WITH_ALL_CASES);
-    expect(
-      expected
-        .split(",")
-        .sort()
-        .join(","),
-    ).toBe(
-      expected
-        .split(",")
-        .sort()
-        .join(","),
-    );
-  });
-
-  it("should handle argv with empty flags", () => {
+  it("should handle empty flags", () => {
     const expected = "";
-    expect(tagsFromArgv(ARGV_EMPTY_FLAGS)).toBe(expected);
+    expect(tagsFromFlags(EMPTY_FLAG)).toBe(expected);
   });
 });
