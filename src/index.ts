@@ -123,6 +123,7 @@ const settings: Settings = loadSettings([
           return
         }
         try {
+// TODO: Move the try catch into runPlaybook
           log.info("Deploying configuration with ansible...");
           await runPlaybook(settings, argv);
           log.ok("Done! ✨");
