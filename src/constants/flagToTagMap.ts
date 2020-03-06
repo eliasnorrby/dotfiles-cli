@@ -30,10 +30,4 @@ export const flagToTagMap: MapEntry[] = [
     shortflag: "d",
     description: "apply MacOS defaults",
   },
-  {
-    tag: "do_post_provision",
-    flag: "post",
-    shortflag: "pp",
-    description: "perform post provisioning tasks",
-  },
 ];
