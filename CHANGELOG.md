@@ -1,3 +1,18 @@
+# [2.0.0](https://github.com/eliasnorrby/dotfiles-cli/compare/v1.3.0...v2.0.0) (2020-03-06)
+
+
+### Reverts
+
+* remove post operation ([78a9fec](https://github.com/eliasnorrby/dotfiles-cli/commit/78a9fec9b1ea654391ae8be4bc9d5aafc164ff7b))
+
+
+### BREAKING CHANGES
+
+* removes the 'post' ('pp') flag.
+
+The post_provision ansible tag was removed in
+eliasnorrby/dotfiles@22dc142c
+
 # [1.3.0](https://github.com/eliasnorrby/dotfiles-cli/compare/v1.2.0...v1.3.0) (2020-03-05)
 
 
