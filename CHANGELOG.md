@@ -1,3 +1,11 @@
+## [2.0.2](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.1...v2.0.2) (2020-03-13)
+
+
+### Bug Fixes
+
+* **deps:** bump @eliasnorrby/log-util from 1.1.0 to 1.1.1 ([5d4646c](https://github.com/eliasnorrby/dotfiles-cli/commit/5d4646cffaedbe8aa3f608d7a3023e61c97462b4))
+* **deps:** bump yargs from 15.1.0 to 15.3.0 ([fec232e](https://github.com/eliasnorrby/dotfiles-cli/commit/fec232ed1f169f7bb5d996ac26e16ee17540f2f5))
+
 ## [2.0.1](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.0...v2.0.1) (2020-03-13)
 
 
