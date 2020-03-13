@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.0...v2.0.1) (2020-03-13)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump acorn from 5.7.3 to 5.7.4 ([18ad087](https://github.com/eliasnorrby/dotfiles-cli/commit/18ad08726f6dbd14316955a89df8301a64baf949))
+
 # [2.0.0](https://github.com/eliasnorrby/dotfiles-cli/compare/v1.3.0...v2.0.0) (2020-03-06)
 
 
