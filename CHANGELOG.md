@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.3...v2.0.4) (2020-04-03)
+
+
+### Bug Fixes
+
+* **deps:** bump prettier and @eliasnorrby/prettier-config ([485c6e8](https://github.com/eliasnorrby/dotfiles-cli/commit/485c6e80c731ebb0dfbb3626e7aff535242be094))
+
 ## [2.0.3](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.2...v2.0.3) (2020-03-17)
 
 
