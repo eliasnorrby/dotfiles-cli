@@ -47,7 +47,7 @@ optionally with verbose output.
 Use the `-t` (`--topic`) flag to limit which topics to deploy. Pass a single
 topic name or a comma separated list:
 
-``` bash
+```bash
 # Deploy all topics
 boom deploy
 
@@ -74,7 +74,7 @@ is always run. It is also fast. The other operations are more time consuming.
 They can be performed using the `-o` (`--operations`) flag. Pass a single
 operation or a comma separated list:
 
-``` bash
+```bash
 # Make sure all brew formulae and casks are installed for all topics
 boom deploy -o homebrew # (This takes a while)
 
@@ -119,7 +119,6 @@ description: apply MacOS defaults
 ```
 
 </details>
-
 
 [travis-badge]: https://img.shields.io/travis/com/eliasnorrby/dotfiles-cli?style=flat
 [travis-link]: https://travis-ci.com/eliasnorrby/dotfiles-cli
