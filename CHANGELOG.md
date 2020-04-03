@@ -1,3 +1,10 @@
+## [2.0.6](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.5...v2.0.6) (2020-04-03)
+
+
+### Bug Fixes
+
+* **deps:** bump chalk from 3.0.0 to 4.0.0 ([6742ae0](https://github.com/eliasnorrby/dotfiles-cli/commit/6742ae0b740c35f50d399e952e3446fd942e4179))
+
 ## [2.0.5](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.4...v2.0.5) (2020-04-03)
 
 
