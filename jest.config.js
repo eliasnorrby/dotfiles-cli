@@ -1,4 +1,4 @@
 module.exports = {
-  ...require("@eliasnorrby/jest-config"),
+  ...require('@eliasnorrby/jest-config'),
   // Override settings here
-};
+}

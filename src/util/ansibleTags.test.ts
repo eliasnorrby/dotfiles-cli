@@ -1,52 +1,52 @@
-import { tagsFromFlags } from "./ansibleTags";
+import { tagsFromFlags } from './ansibleTags'
 
-const ONE_FLAG = "homebrew"
+const ONE_FLAG = 'homebrew'
 
-const TWO_FLAGS = "apps,packages"
+const TWO_FLAGS = 'apps,packages'
 
-const DUPLICATE_FLAGS = "apps,packages,apps"
+const DUPLICATE_FLAGS = 'apps,packages,apps'
 
-const SHORT_FLAGS = "a,p"
+const SHORT_FLAGS = 'a,p'
 
-const SHORT_AND_LONG_FLAGS = "a,p,apps"
+const SHORT_AND_LONG_FLAGS = 'a,p,apps'
 
-const INVALID_FLAG = "apps,packages,imnnotavalidflag"
+const INVALID_FLAG = 'apps,packages,imnnotavalidflag'
 
-const EMPTY_FLAG = ""
+const EMPTY_FLAG = ''
 
-describe("tagsFromFlags", () => {
-  it("should handle a single flag", () => {
-    const expected = "do_homebrew";
-    expect(tagsFromFlags(ONE_FLAG)).toBe(expected);
-  });
+describe('tagsFromFlags', () => {
+  it('should handle a single flag', () => {
+    const expected = 'do_homebrew'
+    expect(tagsFromFlags(ONE_FLAG)).toBe(expected)
+  })
 
-  it("should handle two flags", () => {
-    const expected = "do_mas,do_packages";
-    expect(tagsFromFlags(TWO_FLAGS)).toBe(expected);
-  });
+  it('should handle two flags', () => {
+    const expected = 'do_mas,do_packages'
+    expect(tagsFromFlags(TWO_FLAGS)).toBe(expected)
+  })
 
-  it("should handle duplicate flags", () => {
-    const expected = "do_mas,do_packages";
-    expect(tagsFromFlags(DUPLICATE_FLAGS)).toBe(expected);
-  });
+  it('should handle duplicate flags', () => {
+    const expected = 'do_mas,do_packages'
+    expect(tagsFromFlags(DUPLICATE_FLAGS)).toBe(expected)
+  })
 
-  it("should handle short flags", () => {
-    const expected = "do_mas,do_packages";
-    expect(tagsFromFlags(SHORT_FLAGS)).toBe(expected);
-  });
+  it('should handle short flags', () => {
+    const expected = 'do_mas,do_packages'
+    expect(tagsFromFlags(SHORT_FLAGS)).toBe(expected)
+  })
 
-  it("should handle short and long flags", () => {
-    const expected = "do_mas,do_packages";
-    expect(tagsFromFlags(SHORT_AND_LONG_FLAGS)).toBe(expected);
-  });
+  it('should handle short and long flags', () => {
+    const expected = 'do_mas,do_packages'
+    expect(tagsFromFlags(SHORT_AND_LONG_FLAGS)).toBe(expected)
+  })
 
-  it("should handle invalid flags", () => {
-    const expected = "do_mas,do_packages";
-    expect(tagsFromFlags(INVALID_FLAG)).toBe(expected);
-  });
+  it('should handle invalid flags', () => {
+    const expected = 'do_mas,do_packages'
+    expect(tagsFromFlags(INVALID_FLAG)).toBe(expected)
+  })
 
-  it("should handle empty flags", () => {
-    const expected = "";
-    expect(tagsFromFlags(EMPTY_FLAG)).toBe(expected);
-  });
-});
+  it('should handle empty flags', () => {
+    const expected = ''
+    expect(tagsFromFlags(EMPTY_FLAG)).toBe(expected)
+  })
+})

@@ -1,12 +1,12 @@
-import { Topic } from "../model/topic";
-import stateIcon from "./stateIcon";
+import { Topic } from '../model/topic'
+import stateIcon from './stateIcon'
 
 export default {
   topic: (topic: Topic) => {
-    const { state, name } = topic;
-    console.log(`${stateIcon(state)} : ${name}`);
+    const { state, name } = topic
+    console.log(`${stateIcon(state)} : ${name}`)
   },
   group: (group: string) => {
-    console.log(`\n---- ${group} ----`);
+    console.log(`\n---- ${group} ----`)
   },
-};
+}

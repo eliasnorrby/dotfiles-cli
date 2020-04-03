@@ -1,4 +1,4 @@
-import { flagToTagMap } from "../constants/flagToTagMap"
+import { flagToTagMap } from '../constants/flagToTagMap'
 
 export const describeFlags = () => {
   for (const entry of flagToTagMap) {

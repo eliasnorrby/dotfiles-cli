@@ -1,11 +1,11 @@
-import { State, iMapStateToSymbols } from "../model/state";
+import { State, iMapStateToSymbols } from '../model/state'
 
 const stateMap: iMapStateToSymbols = {
-  present: "🔹",
-  disabled: "🔸",
-  absent: "🔺",
-};
+  present: '🔹',
+  disabled: '🔸',
+  absent: '🔺',
+}
 
 export default function stateIcon(state: State) {
-  return stateMap[state];
+  return stateMap[state]
 }
