@@ -1,3 +1,11 @@
+## [2.0.10](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.9...v2.0.10) (2020-04-22)
+
+
+### Bug Fixes
+
+* **deps:** bump ora from 4.0.3 to 4.0.4 ([18eaf33](https://github.com/eliasnorrby/dotfiles-cli/commit/18eaf333ee883b899bda4d0fd627cbf0ba9a9dd2))
+* **deps:** bump prettier from 2.0.4 to 2.0.5 ([4d70957](https://github.com/eliasnorrby/dotfiles-cli/commit/4d709578a5704a683b05b4754e0500aeed953def))
+
 ## [2.0.9](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.8...v2.0.9) (2020-04-08)
 
 
