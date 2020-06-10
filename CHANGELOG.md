@@ -1,3 +1,11 @@
+## [2.0.13](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.12...v2.0.13) (2020-06-10)
+
+
+### Bug Fixes
+
+* **deps:** bump chalk from 4.0.0 to 4.1.0 ([d1d1697](https://github.com/eliasnorrby/dotfiles-cli/commit/d1d1697bf92b8bb70299d3444b2ab18569e5fd83))
+* **deps:** bump js-yaml from 3.13.1 to 3.14.0 ([bcb7829](https://github.com/eliasnorrby/dotfiles-cli/commit/bcb7829be18c25b1caaf1199f1d1a1a8e0d6836f))
+
 ## [2.0.12](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.11...v2.0.12) (2020-05-25)
 
 
