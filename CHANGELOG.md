@@ -1,3 +1,10 @@
+## [2.0.16](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.15...v2.0.16) (2020-07-07)
+
+
+### Bug Fixes
+
+* **deps:** bump yargs from 15.3.1 to 15.4.0 ([db2fb2b](https://github.com/eliasnorrby/dotfiles-cli/commit/db2fb2b323dbc849602a4d412f0b15780368aae1))
+
 ## [2.0.15](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.14...v2.0.15) (2020-07-07)
 
 
