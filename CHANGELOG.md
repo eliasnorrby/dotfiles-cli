@@ -1,3 +1,10 @@
+## [2.0.15](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.14...v2.0.15) (2020-07-07)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump npm from 6.14.5 to 6.14.6 ([424b898](https://github.com/eliasnorrby/dotfiles-cli/commit/424b89889148654b6d4e9f46f605a88e4d8d90d4))
+
 ## [2.0.14](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.13...v2.0.14) (2020-06-11)
 
 
