@@ -1,3 +1,11 @@
+## [2.0.17](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.16...v2.0.17) (2020-07-08)
+
+
+### Bug Fixes
+
+* **deps:** bump @eliasnorrby/log-util from 1.1.3 to 1.1.4 ([90bdc4f](https://github.com/eliasnorrby/dotfiles-cli/commit/90bdc4f5cd77c25f4dfeebdf753da074c471196a))
+* **deps:** bump execa from 4.0.2 to 4.0.3 ([b15756b](https://github.com/eliasnorrby/dotfiles-cli/commit/b15756b2391257c53f6ffc41d9858143b0ecb298))
+
 ## [2.0.16](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.15...v2.0.16) (2020-07-07)
 
 
