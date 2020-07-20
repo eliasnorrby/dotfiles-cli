@@ -1,3 +1,10 @@
+## [2.0.19](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.18...v2.0.19) (2020-07-20)
+
+
+### Bug Fixes
+
+* **deps:** bump ora from 4.0.4 to 4.0.5 ([491c677](https://github.com/eliasnorrby/dotfiles-cli/commit/491c67713f38645e21e590b2751a6b071b24f09b))
+
 ## [2.0.18](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.17...v2.0.18) (2020-07-13)
 
 
