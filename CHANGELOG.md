@@ -1,3 +1,10 @@
+## [2.0.21](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.20...v2.0.21) (2020-09-07)
+
+
+### Bug Fixes
+
+* **deps:** bump ora from 5.0.0 to 5.1.0 ([645db99](https://github.com/eliasnorrby/dotfiles-cli/commit/645db998b9b269d76a14e8c4b988627df1a8677c))
+
 ## [2.0.20](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.19...v2.0.20) (2020-08-12)
 
 
