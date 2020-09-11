@@ -1,3 +1,10 @@
+## [2.0.22](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.21...v2.0.22) (2020-09-11)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump node-fetch from 2.6.0 to 2.6.1 ([6e53c06](https://github.com/eliasnorrby/dotfiles-cli/commit/6e53c067f6666360fb703b8cdb9644c92995c763))
+
 ## [2.0.21](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.20...v2.0.21) (2020-09-07)
 
 

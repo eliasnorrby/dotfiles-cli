@@ -1,6 +1,6 @@
 {
   "name": "@eliasnorrby/dotfiles-cli",
-  "version": "2.0.21",
+  "version": "2.0.22",
   "description": "CLI for eliasnorrby/dotfiles",
   "main": "./lib/index.js",
   "bin": {
