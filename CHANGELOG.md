@@ -1,3 +1,10 @@
+## [2.0.24](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.23...v2.0.24) (2020-10-01)
+
+
+### Bug Fixes
+
+* **deps:** bump prettier from 2.0.5 to 2.1.2 ([7424cf8](https://github.com/eliasnorrby/dotfiles-cli/commit/7424cf8f127e18386cb92e0f637841b8cf82a8e4))
+
 ## [2.0.23](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.22...v2.0.23) (2020-09-11)
 
 
