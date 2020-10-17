@@ -1,3 +1,11 @@
+## [2.0.26](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.25...v2.0.26) (2020-10-17)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump lodash from 4.17.15 to 4.17.20 ([1b6415c](https://github.com/eliasnorrby/dotfiles-cli/commit/1b6415c31ed547d00d5b3a79954bf7cc573be815))
+* **deps:** [security] bump npm-user-validate from 1.0.0 to 1.0.1 ([1f7f554](https://github.com/eliasnorrby/dotfiles-cli/commit/1f7f55422bd312eba555fe94f8117a8272f08d9c))
+
 ## [2.0.25](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.24...v2.0.25) (2020-10-01)
 
 
