@@ -1,3 +1,10 @@
+## [2.0.28](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.27...v2.0.28) (2020-10-23)
+
+
+### Bug Fixes
+
+* **deps:** bump yargs from 16.0.3 to 16.1.0 ([6bf1d89](https://github.com/eliasnorrby/dotfiles-cli/commit/6bf1d89093692acd6ac9934e3a53ebf17da04ef9))
+
 ## [2.0.27](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.26...v2.0.27) (2020-10-19)
 
 
