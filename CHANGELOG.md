@@ -1,3 +1,10 @@
+## [2.0.29](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.28...v2.0.29) (2020-10-30)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump npm-user-validate from 1.0.0 to 1.0.1 ([deceaac](https://github.com/eliasnorrby/dotfiles-cli/commit/deceaac249b65ae6b07787f6a604cf44c7e23850))
+
 ## [2.0.28](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.27...v2.0.28) (2020-10-23)
 
 
