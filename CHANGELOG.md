@@ -1,3 +1,10 @@
+## [2.0.30](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.29...v2.0.30) (2020-11-03)
+
+
+### Bug Fixes
+
+* **deps:** bump @eliasnorrby/log-util from 1.1.6 to 1.1.7 ([e4f96f5](https://github.com/eliasnorrby/dotfiles-cli/commit/e4f96f5b83cd24b1cf271f479897c2dd6000a640))
+
 ## [2.0.29](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.28...v2.0.29) (2020-10-30)
 
 
