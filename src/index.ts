@@ -17,7 +17,8 @@ import { describeFlags } from './util/describeFlags'
 
 // TODO: Fix hardcoded config
 const settings: Settings = loadSettings([
-  os.homedir() + '/.config/boom/.boomrc.js',
+  os.homedir() + '/.config/boom/boomrc.js',
+  os.homedir() + '/.boomrc.js',
 ])
 
 ;(async () => {
