@@ -1,3 +1,25 @@
+# [3.0.0](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.32...v3.0.0) (2020-11-20)
+
+
+* feat!: update boomrc paths ([41f414e](https://github.com/eliasnorrby/dotfiles-cli/commit/41f414e9fdc80847e9795aa3289811745b33a759))
+
+
+### Features
+
+* add pacman operation ([a906cb5](https://github.com/eliasnorrby/dotfiles-cli/commit/a906cb5848e5039d4c2b07dd42d995318aa12ef5))
+
+
+### BREAKING CHANGES
+
+* Look for an rc file at
+
+- ~/.config/boomrc.js
+- ~/.boomrc.js
+
+but no longer at
+
+- ~/.config/.boomrc.js
+
 ## [2.0.32](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.31...v2.0.32) (2020-11-17)
 
 
