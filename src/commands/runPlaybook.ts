@@ -33,14 +33,21 @@ export default async function runPlaybook(settings: Settings, argv: any) {
     color: 'yellow',
   })
   !argv.verbose && spinner.start()
-  await execa.command(command, {
-    stdio: argv.verbose ? 'inherit' : 'pipe',
-    cwd: provisionDir,
-    shell: true,
-  })
-  !argv.verbose && spinner.succeed('Done')
-  if (argv.topic) {
-    log.info('Cleaning up')
-    cleanSelected(settings)
+  try {
+    const res = await execa.command(command, {
+      stdio: argv.verbose ? 'inherit' : 'pipe',
+      cwd: provisionDir,
+      shell: true,
+    })
+    !argv.verbose && spinner.succeed('Playbook run succeeded')
+    cleanup()
+    log.ok('Done! ✨')
+  } catch (err) {
+    !argv.verbose && console.log(err.stdout)
+    !argv.verbose && spinner.fail('Playbook run failed')
+    cleanup()
+    log.fail(
+      'The playbook did not run successfully. Check the output above for details.'
+    )
   }
 }
