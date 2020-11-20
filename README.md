@@ -39,7 +39,7 @@ Remove a topic (i.e. set its state to `absent` in `.dotfiles/root.config.yml`).
 Run the configured update script (eg. for `zplug`, `vim-plug`, `brew`),
 optionally with verbose output.
 
-### `deploy [-v] [-t <topic(s)>] [-o <operation(s)>]`
+### `deploy [-vb] [-t <topic(s)>] [-o <operation(s)>]`
 
 Run the configured ansible playbook to deploy the dotfile configuration,
 optionally with verbose output.
@@ -56,6 +56,9 @@ boom deploy -t shell/zsh
 
 # Deploy multiple topics
 boom deploy -t shell/zsh,shell/git,editor/vscode
+
+# Deploy with escalated priveleges (tell ansible to prompt for sudo password)
+boom deploy -b
 ```
 
 #### Operations
