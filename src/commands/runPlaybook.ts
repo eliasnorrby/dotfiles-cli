@@ -13,7 +13,7 @@ export default async function runPlaybook(settings: Settings, argv: any) {
   ansibleFlags += ` --extra-vars \"{is_interactive: ${
     argv.verbose ? 'yes' : 'no'
   }}\"`
-  warnIfSudoNeeded(settings, argv)
+  !argv.quiet && warnIfSudoNeeded(settings, argv)
   const command =
     deployScript +
     (ansibleTags ? ` --tags '${ansibleTags}'` : '') +
@@ -24,8 +24,8 @@ export default async function runPlaybook(settings: Settings, argv: any) {
   }
   const cleanup = () => {
     if (argv.topic) {
-      log.info('Cleaning up')
-      cleanSelected(settings)
+      !argv.quiet && log.info('Cleaning up')
+      cleanSelected(settings, argv.quiet)
     }
   }
   const spinner = ora({

@@ -141,5 +141,10 @@ const settings: Settings = loadSettings([
       type: 'boolean',
       description: 'Run with verbose logging',
     })
+    .option('quiet', {
+      alias: 'q',
+      type: 'boolean',
+      description: 'Silence warnings and some logging',
+    })
     .strict(true).argv
 })()

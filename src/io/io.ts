@@ -127,10 +127,10 @@ export function selectTopics(
   }
 }
 
-export function cleanSelected(settings: Settings) {
+export function cleanSelected(settings: Settings, beQuiet = false) {
   const { dotfiles, tempfile } = settings
   const filePathToRemove = path.resolve(dotfiles, tempfile)
-  log.info(`Removing ${filePathToRemove}`)
+  !beQuiet && log.info(`Removing ${filePathToRemove}`)
   fs.unlinkSync(filePathToRemove)
 }
 
