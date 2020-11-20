@@ -41,6 +41,7 @@ export default async function runPlaybook(settings: Settings, argv: any) {
       shell: true,
     })
     !argv.verbose && spinner.succeed('Playbook run succeeded')
+    !argv.verbose && printSummary(res.stdout)
     cleanup()
     log.ok('Done! ✨')
   } catch (err) {
@@ -50,5 +51,33 @@ export default async function runPlaybook(settings: Settings, argv: any) {
     log.fail(
       'The playbook did not run successfully. Check the output above for details.'
     )
+  }
+}
+
+function printSummary(stdout: string) {
+  if (!stdout) return
+  const lines = stdout.split('\n')
+  try {
+    const changes: { key: string; value: string }[] = lines[lines.length - 3]
+      .split(':')[1]
+      .trim()
+      .split(/ +/)
+      .map((item) => item.split('='))
+      .map((keyvalue) => ({ key: keyvalue[0], value: keyvalue[1] }))
+    let changelist = ''
+    changes.forEach((kv, idx) => {
+      changelist +=
+        kv.key.toUpperCase() +
+        ': ' +
+        kv.value +
+        (idx < changes.length - 1 ? ', ' : '')
+    })
+    log.info(changelist)
+  } catch (err) {
+    console.log(err)
+    log.warn('Could not print summary falling back to simpler method')
+    const summary = lines.slice(lines.length - 4).join('\n')
+    log.info('Summary')
+    console.log(summary)
   }
 }
