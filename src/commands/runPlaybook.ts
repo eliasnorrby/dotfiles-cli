@@ -85,8 +85,8 @@ function printSummary(stdout: string) {
 
 function warnIfSudoNeeded(settings: Settings, argv: any) {
   let warningWasRaised = false
-  if (argv.topics) {
-    warningWasRaised = checkSelectedTopics(settings, argv.topics)
+  if (argv.topic) {
+    warningWasRaised = checkSelectedTopics(settings, argv.topic)
   } else {
     warningWasRaised = checkAllTopics(settings, argv)
   }
