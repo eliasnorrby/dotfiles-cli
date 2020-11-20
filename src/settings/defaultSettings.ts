@@ -4,8 +4,8 @@ import Settings from './iSettings'
 
 export const defaultSettings: Settings = {
   dotfiles: path.resolve(os.homedir(), '.dotfiles'),
-  rootfile: 'root.config.yml',
   localfile: 'root.config.local.yml',
+  rootfile: 'macos.config.yml',
   playbook: 'playbook.yml',
   provisionDir: path.resolve(os.homedir(), '.dotfiles', '_provision'),
   deployScript: './run-playbook.zsh',
