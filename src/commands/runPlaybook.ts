@@ -4,10 +4,12 @@ import Settings from '../settings/iSettings'
 import { log } from '@eliasnorrby/log-util'
 import { selectTopics, cleanSelected, readTopicConfig, readConfig } from '../io'
 import { buildTags } from '../util/ansibleTags'
+import { pacmanEntry } from '../constants/flagToTagMap'
 
 export default async function runPlaybook(settings: Settings, argv: any) {
   const { provisionDir, deployScript } = settings
   let ansibleTags = buildTags(argv.operations)
+  if (pacmanWillBeCalled(argv)) argv.become = true
   let ansibleFlags = argv.become ? ' --ask-become-pass' : ''
   if (argv.become) argv.verbose = true
   ansibleFlags += ` --extra-vars \"{is_interactive: ${
@@ -53,6 +55,13 @@ export default async function runPlaybook(settings: Settings, argv: any) {
       'The playbook did not run successfully. Check the output above for details.'
     )
   }
+}
+
+function pacmanWillBeCalled(argv: any) {
+  return (
+    argv.operations?.includes(pacmanEntry.flag) ||
+    argv.operations?.includes(pacmanEntry.shortflag)
+  )
 }
 
 function printSummary(stdout: string) {
