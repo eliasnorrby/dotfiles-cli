@@ -90,7 +90,7 @@ function warnIfSudoNeeded(settings: Settings, argv: any) {
   } else {
     warningWasRaised = checkAllTopics(settings, argv)
   }
-  if (warningWasRaised) {
+  if (warningWasRaised && !argv.verbose) {
     log.warn('Tasks requiring sudo may be ignored during this run')
     log.warn(
       'Run the command again with the -b or -v flag to be prompted for your password'
