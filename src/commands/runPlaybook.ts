@@ -31,6 +31,7 @@ export default async function runPlaybook(settings: Settings, argv: any) {
     text: 'Running playbook...',
     spinner: 'pipe',
     color: 'yellow',
+    prefixText: ' •••• ',
   })
   !argv.verbose && spinner.start()
   try {
