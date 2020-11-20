@@ -1,3 +1,20 @@
+# [3.1.0](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.0.0...v3.1.0) (2020-11-20)
+
+
+### Bug Fixes
+
+* do not display hint to run verbosely unless we aren't ([a2aef8f](https://github.com/eliasnorrby/dotfiles-cli/commit/a2aef8f3c7105e8793e606a59140355c2a4745c7))
+* use argv.topics instead of argv.topic ([f2e6410](https://github.com/eliasnorrby/dotfiles-cli/commit/f2e641061bdf512c1f7c7e24cae1741a3ee57a17))
+
+
+### Features
+
+* add --become flag ([be04403](https://github.com/eliasnorrby/dotfiles-cli/commit/be044035f20dac4b4f2decee03ed1ed130798709))
+* add --quiet flag ([3f3c5ba](https://github.com/eliasnorrby/dotfiles-cli/commit/3f3c5baec773cb1114c3245e732721f4c048fae8))
+* add summary printout ([c9ecc31](https://github.com/eliasnorrby/dotfiles-cli/commit/c9ecc31b8fa484099e98fb8e1cb0eec187bfcc50))
+* automatically become when running pacman ([9b52690](https://github.com/eliasnorrby/dotfiles-cli/commit/9b52690e8927c1ed3c9a0bfeb9a01bcd0596afc7))
+* warn when topics require sudo ([c30d588](https://github.com/eliasnorrby/dotfiles-cli/commit/c30d588e81803d882a664ce5691b4baf8b05cf16))
+
 # [3.0.0](https://github.com/eliasnorrby/dotfiles-cli/compare/v2.0.32...v3.0.0) (2020-11-20)
 
 
