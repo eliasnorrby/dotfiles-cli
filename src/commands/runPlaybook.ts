@@ -8,10 +8,24 @@ import { buildTags } from '../util/ansibleTags'
 export default async function runPlaybook(settings: Settings, argv: any) {
   const { provisionDir, deployScript } = settings
   let ansibleTags = buildTags(argv.operations)
-  const command = deployScript + (ansibleTags ? ` --tags '${ansibleTags}'` : '')
+  let ansibleFlags = argv.become ? ' --ask-become-pass' : ''
+  if (argv.become) argv.verbose = true
+  ansibleFlags += ` --extra-vars \"{is_interactive: ${
+    argv.verbose ? 'yes' : 'no'
+  }}\"`
+  const command =
+    deployScript +
+    (ansibleTags ? ` --tags '${ansibleTags}'` : '') +
+    ansibleFlags
   if (argv.topic) {
     log.info(`Deploying topic(s): ${argv.topic}`)
     selectTopics(settings, argv, argv.topic)
+  }
+  const cleanup = () => {
+    if (argv.topic) {
+      log.info('Cleaning up')
+      cleanSelected(settings)
+    }
   }
   const spinner = ora({
     text: 'Running playbook...',
