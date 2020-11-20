@@ -2,7 +2,7 @@ import execa from 'execa'
 import ora from 'ora'
 import Settings from '../settings/iSettings'
 import { log } from '@eliasnorrby/log-util'
-import { selectTopics, cleanSelected } from '../io'
+import { selectTopics, cleanSelected, readTopicConfig, readConfig } from '../io'
 import { buildTags } from '../util/ansibleTags'
 
 export default async function runPlaybook(settings: Settings, argv: any) {
@@ -13,6 +13,7 @@ export default async function runPlaybook(settings: Settings, argv: any) {
   ansibleFlags += ` --extra-vars \"{is_interactive: ${
     argv.verbose ? 'yes' : 'no'
   }}\"`
+  warnIfSudoNeeded(settings, argv)
   const command =
     deployScript +
     (ansibleTags ? ` --tags '${ansibleTags}'` : '') +
@@ -80,4 +81,53 @@ function printSummary(stdout: string) {
     log.info('Summary')
     console.log(summary)
   }
+}
+
+function warnIfSudoNeeded(settings: Settings, argv: any) {
+  let warningWasRaised = false
+  if (argv.topics) {
+    warningWasRaised = checkSelectedTopics(settings, argv.topics)
+  } else {
+    warningWasRaised = checkAllTopics(settings, argv)
+  }
+  if (warningWasRaised) {
+    log.warn('Tasks requiring sudo may be ignored during this run')
+    log.warn(
+      'Run the command again with the -b or -v flag to be prompted for your password'
+    )
+  }
+}
+
+function printSudoWarningFor(topicName: string) {
+  log.warn(`Topic ${topicName} may require sudo`)
+}
+
+function checkSelectedTopics(settings: Settings, topicPaths: string) {
+  let warningWasRaised = false
+  const pathList = topicPaths.split(',')
+  for (const topicPath of pathList) {
+    const topicConfig = readTopicConfig(settings, topicPath)
+    if (topicConfig.become) {
+      printSudoWarningFor(topicPath)
+      warningWasRaised = true
+    }
+  }
+  return warningWasRaised
+}
+
+function checkAllTopics(settings: Settings, argv: any) {
+  let warningWasRaised = false
+  const topicGroups = readConfig(settings, argv)
+  const groups = Object.keys(topicGroups)
+  groups.forEach((group) =>
+    topicGroups[group].forEach((topic) => {
+      const topicPath = `${group}/${topic.name}`
+      const topicConfig = readTopicConfig(settings, topicPath)
+      if (topicConfig.become) {
+        printSudoWarningFor(topicPath)
+        warningWasRaised = true
+      }
+    })
+  )
+  return warningWasRaised
 }
