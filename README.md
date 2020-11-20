@@ -56,9 +56,6 @@ boom deploy -t shell/zsh
 
 # Deploy multiple topics
 boom deploy -t shell/zsh,shell/git,editor/vscode
-
-# Deploy with escalated priveleges (tell ansible to prompt for sudo password)
-boom deploy -b
 ```
 
 #### Operations

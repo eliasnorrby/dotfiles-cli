@@ -116,11 +116,6 @@ const settings: Settings = loadSettings([
           describe: 'list available operations',
           type: 'boolean',
         })
-        yargs.option('become', {
-          alias: 'b',
-          describe: 'elevate privileges (use sudo)',
-          type: 'boolean',
-        })
       },
       async (argv) => {
         if (argv['list-operations']) {
