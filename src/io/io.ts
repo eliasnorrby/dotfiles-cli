@@ -119,7 +119,7 @@ export function selectTopics(
     const formattedYamlStr = prettier.format(yamlStr, { parser: 'yaml' })
     log.info('Writing temporary config:')
     console.log(formattedYamlStr)
-    writeConfig(settings, temporaryRootConfig, settings.localfile)
+    writeConfig(settings, temporaryRootConfig, settings.tempfile)
   } catch (err) {
     log.fail('Error writing temporary config.')
     console.log(err)
@@ -127,8 +127,8 @@ export function selectTopics(
 }
 
 export function cleanSelected(settings: Settings) {
-  const { dotfiles, localfile } = settings
-  const filePathToRemove = path.resolve(dotfiles, localfile)
+  const { dotfiles, tempfile } = settings
+  const filePathToRemove = path.resolve(dotfiles, tempfile)
   log.info(`Removing ${filePathToRemove}`)
   fs.unlinkSync(filePathToRemove)
 }
