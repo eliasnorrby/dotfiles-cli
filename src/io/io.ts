@@ -3,13 +3,13 @@ import yaml from 'js-yaml'
 import path from 'path'
 import prettier from 'prettier'
 import { State } from '../model/state'
-import { Topic, TopicGroupList } from '../model/topic'
+import { Topic, TopicGroupList, TopicConfig } from '../model/topic'
 import Settings from '../settings/iSettings'
 import { log } from '@eliasnorrby/log-util'
 import stateVerb from './stateVerb'
 import stateIcon from './stateIcon'
 
-export function readConfig(settings: Settings, argv: any, file?: string) {
+export function readConfig(settings: Settings, _argv: any, file?: string) {
   const { dotfiles, rootfile } = settings
   const fileToRead = file || rootfile
   try {
@@ -31,7 +31,7 @@ export function readConfig(settings: Settings, argv: any, file?: string) {
   }
 }
 
-export function readTopicConfig(settings: Settings, topicName: string) {
+export function readTopicConfig(settings: Settings, topicName: string): TopicConfig {
   const { dotfiles } = settings
   const fileToRead = path.resolve(dotfiles, topicName, 'topic.config.yml')
   const shortName = topicName.split('/')[1]
@@ -43,7 +43,8 @@ export function readTopicConfig(settings: Settings, topicName: string) {
       log.fail(`Could not read config for topic ${topicName}, exiting.`)
       process.exit(1)
     }
-    return data[fieldName]
+    const topicConfig: TopicConfig = data[fieldName]
+    return topicConfig
   } catch (e) {
     log.fail('There was an error reading the config file.')
     console.log(e)
@@ -102,7 +103,7 @@ export function selectTopics(
   topicNames: string
 ) {
   const nameList = topicNames.split(',')
-  log.info(`Selecting ${nameList.length} topics for deployment`)
+  argv.verbose && log.info(`Selecting ${nameList.length} topics for deployment`)
   const temporaryRootConfig: TopicGroupList = {}
 
   for (const name of nameList) {
@@ -117,8 +118,8 @@ export function selectTopics(
     let yamlStr = yaml.safeDump({ topics: temporaryRootConfig })
     // format yaml string
     const formattedYamlStr = prettier.format(yamlStr, { parser: 'yaml' })
-    log.info('Writing temporary config:')
-    console.log(formattedYamlStr)
+    argv.verbose && log.info('Writing temporary config:')
+    argv.verbose && console.log(formattedYamlStr)
     writeConfig(settings, temporaryRootConfig, settings.tempfile)
   } catch (err) {
     log.fail('Error writing temporary config.')
