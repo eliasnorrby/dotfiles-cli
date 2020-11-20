@@ -128,16 +128,8 @@ const settings: Settings = loadSettings([
           describeFlags()
           return
         }
-        try {
-          // TODO: Move the try catch into runPlaybook
-          log.info('Deploying configuration with ansible...')
-          await runPlaybook(settings, argv)
-          log.ok('Done! ✨')
-        } catch (e) {
-          log.fail('An error occured during the playbook run:')
-          console.log(e)
-          log.fail('Exiting.')
-        }
+        log.info('Deploying configuration with ansible...')
+        await runPlaybook(settings, argv)
       }
     )
     .command('settings', 'show settings', {}, () => {
