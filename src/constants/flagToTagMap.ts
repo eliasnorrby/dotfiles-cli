@@ -5,6 +5,13 @@ type MapEntry = {
   description: string
 }
 
+export const pacmanEntry = {
+    tag: 'do_pacman',
+    flag: 'pacman',
+    shortflag: 'm',
+    description: 'install packages with pacman',
+  }
+
 export const flagToTagMap: MapEntry[] = [
   {
     tag: 'do_homebrew',
@@ -12,12 +19,7 @@ export const flagToTagMap: MapEntry[] = [
     shortflag: 'h',
     description: 'install homebrew formulae & casks',
   },
-  {
-    tag: 'do_pacman',
-    flag: 'pacman',
-    shortflag: 'm',
-    description: 'install packages with pacman',
-  },
+  pacmanEntry,
   {
     tag: 'do_mas',
     flag: 'apps',
