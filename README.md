@@ -101,6 +101,12 @@ description: install homebrew formulae & casks
 ```
 
 ```
+operation: pacman
+shorthand: m
+description: install packages with pacman
+```
+
+```
 operation: apps
 shorthand: a
 description: install app store apps

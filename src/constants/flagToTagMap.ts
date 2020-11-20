@@ -13,6 +13,12 @@ export const flagToTagMap: MapEntry[] = [
     description: 'install homebrew formulae & casks',
   },
   {
+    tag: 'do_pacman',
+    flag: 'pacman',
+    shortflag: 'm',
+    description: 'install packages with pacman',
+  },
+  {
     tag: 'do_mas',
     flag: 'apps',
     shortflag: 'a',
