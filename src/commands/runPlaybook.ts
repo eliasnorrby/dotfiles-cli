@@ -9,10 +9,7 @@ import { pacmanEntry } from '../constants/flagToTagMap'
 export default async function runPlaybook(settings: Settings, argv: any) {
   const { provisionDir, deployScript } = settings
   let ansibleTags = buildTags(argv.operations)
-  if (pacmanWillBeCalled(argv)) {
-    argv.verbose = true
-    log.info(`Running in verbose mode to support pacman`)
-  }
+  if (pacmanWillBeCalled(argv)) argv.become = true
   let ansibleFlags = argv.become ? ' --ask-become-pass' : ''
   if (argv.become) argv.verbose = true
   ansibleFlags += ` --extra-vars \"{is_interactive: ${
