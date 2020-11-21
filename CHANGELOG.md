@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.1.0...v3.1.1) (2020-11-21)
+
+
+### Reverts
+
+* refactor: remove the become flag ([7818e06](https://github.com/eliasnorrby/dotfiles-cli/commit/7818e06c6289f2196f03326f7282e9989e0e2291))
+
 # [3.1.0](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.0.0...v3.1.0) (2020-11-20)
 
 
