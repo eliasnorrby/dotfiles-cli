@@ -1,3 +1,10 @@
+## [3.1.4](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.1.3...v3.1.4) (2020-12-04)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump highlight.js from 10.4.0 to 10.4.1 ([45b58b2](https://github.com/eliasnorrby/dotfiles-cli/commit/45b58b2f0297a344489753d548d321d874bd9c04))
+
 ## [3.1.3](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.1.2...v3.1.3) (2020-12-02)
 
 
