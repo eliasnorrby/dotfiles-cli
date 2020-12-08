@@ -1,3 +1,10 @@
+## [3.1.5](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.1.4...v3.1.5) (2020-12-08)
+
+
+### Bug Fixes
+
+* **deps:** bump js-yaml from 3.14.0 to 3.14.1 ([13c441d](https://github.com/eliasnorrby/dotfiles-cli/commit/13c441ddf1efc88ff7fda7d073ac8497861de457))
+
 ## [3.1.4](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.1.3...v3.1.4) (2020-12-04)
 
 
