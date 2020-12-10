@@ -1,3 +1,10 @@
+## [3.1.6](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.1.5...v3.1.6) (2020-12-10)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump ini from 1.3.5 to 1.3.7 ([954f4ad](https://github.com/eliasnorrby/dotfiles-cli/commit/954f4ad121b2465b2338f70133396b635d594f66))
+
 ## [3.1.5](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.1.4...v3.1.5) (2020-12-08)
 
 
