@@ -1,3 +1,10 @@
+## [3.1.8](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.1.7...v3.1.8) (2021-01-11)
+
+
+### Bug Fixes
+
+* **deps:** bump cli-highlight from 2.1.9 to 2.1.10 ([d061139](https://github.com/eliasnorrby/dotfiles-cli/commit/d061139688803acb49b8af4297c9ba4de5c0afab))
+
 ## [3.1.7](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.1.6...v3.1.7) (2020-12-30)
 
 
