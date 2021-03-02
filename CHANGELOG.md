@@ -1,3 +1,10 @@
+## [3.1.9](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.1.8...v3.1.9) (2021-03-02)
+
+
+### Bug Fixes
+
+* **deps:** bump @eliasnorrby/log-util from 1.1.7 to 1.1.8 ([ef545a6](https://github.com/eliasnorrby/dotfiles-cli/commit/ef545a693d5ce3da53a0191ec3d126639d262eea))
+
 ## [3.1.8](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.1.7...v3.1.8) (2021-01-11)
 
 
