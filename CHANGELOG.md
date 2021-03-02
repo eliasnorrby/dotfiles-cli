@@ -1,3 +1,11 @@
+## [3.1.12](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.1.11...v3.1.12) (2021-03-02)
+
+
+### Bug Fixes
+
+* **deps:** bump ora from 5.1.0 to 5.3.0 ([85ac283](https://github.com/eliasnorrby/dotfiles-cli/commit/85ac2833b2ae6b55a5a169eb41669c403d11e9a5))
+* **deps:** bump yargs from 16.1.1 to 16.2.0 ([2a33027](https://github.com/eliasnorrby/dotfiles-cli/commit/2a33027a2fc17d2fd6e16575e0e7b3c842136c7e))
+
 ## [3.1.11](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.1.10...v3.1.11) (2021-03-02)
 
 
