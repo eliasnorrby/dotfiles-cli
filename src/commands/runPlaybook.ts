@@ -10,8 +10,11 @@ export default async function runPlaybook(settings: Settings, argv: any) {
   const { provisionDir, deployScript } = settings
   let ansibleTags = buildTags(argv.operations)
   if (pacmanWillBeCalled(argv)) argv.become = true
-  let ansibleFlags = argv.become ? ' --ask-become-pass' : ''
-  if (argv.become) argv.verbose = true
+  let ansibleFlags = ''
+  if (argv.become) {
+    argv.verbose = true
+    ansibleFlags = ' --ask-become-pass'
+  }
   ansibleFlags += ` --extra-vars \"{is_interactive: ${
     argv.verbose ? 'yes' : 'no'
   }}\"`
