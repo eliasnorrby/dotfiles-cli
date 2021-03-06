@@ -3,7 +3,7 @@ import ora from 'ora'
 import Settings from '../settings/iSettings'
 import { log } from '@eliasnorrby/log-util'
 import { selectTopics, cleanSelected, readTopicConfig, readConfig } from '../io'
-import { buildTags } from '../util/ansibleTags'
+import { buildTags, addSudo } from '../util/ansibleTags'
 import { pacmanEntry } from '../constants/flagToTagMap'
 
 export default async function runPlaybook(settings: Settings, argv: any) {
@@ -14,6 +14,7 @@ export default async function runPlaybook(settings: Settings, argv: any) {
   if (argv.become) {
     argv.verbose = true
     ansibleFlags = ' --ask-become-pass'
+    ansibleTags = addSudo(ansibleTags)
   }
   ansibleFlags += ` --extra-vars \"{is_interactive: ${
     argv.verbose ? 'yes' : 'no'

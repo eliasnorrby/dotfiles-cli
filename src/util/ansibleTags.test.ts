@@ -1,4 +1,4 @@
-import { tagsFromFlags } from './ansibleTags'
+import { tagsFromFlags, addSudo } from './ansibleTags'
 
 const ONE_FLAG = 'homebrew'
 
@@ -48,5 +48,17 @@ describe('tagsFromFlags', () => {
   it('should handle empty flags', () => {
     const expected = ''
     expect(tagsFromFlags(EMPTY_FLAG)).toBe(expected)
+  })
+})
+
+describe('addSudo', () => {
+  it('should handle empty tags', () => {
+    const expected = 'all,sudo_enabled'
+    expect(addSudo(null)).toBe(expected)
+  })
+
+  it('should handle existing tags', () => {
+    const expected = 'all,do_homebrew,sudo_enabled'
+    expect(addSudo('all,do_homebrew')).toBe(expected)
   })
 })

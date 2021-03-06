@@ -24,3 +24,10 @@ export const buildTags = (operations: string) => {
   if (ansibleTags.length === 0) return null
   return 'all,' + ansibleTags
 }
+
+export const addSudo = (tags: string | null) => {
+  if (!tags) {
+    return 'all,sudo_enabled'
+  }
+  return `${tags},sudo_enabled`
+}
