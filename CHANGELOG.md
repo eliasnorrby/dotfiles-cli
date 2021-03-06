@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.1.12...v3.2.0) (2021-03-06)
+
+
+### Features
+
+* pass sudo_enabled tag on become flag ([09d6992](https://github.com/eliasnorrby/dotfiles-cli/commit/09d69925e36edc4793945dc101bfb1b68dd5d72c))
+
 ## [3.1.12](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.1.11...v3.1.12) (2021-03-02)
 
 
