@@ -1,3 +1,10 @@
+## [3.2.1](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.0...v3.2.1) (2021-03-19)
+
+
+### Bug Fixes
+
+* **deps:** bump ora from 5.3.0 to 5.4.0 ([d7131fa](https://github.com/eliasnorrby/dotfiles-cli/commit/d7131fa2c2112a7849bd32ac68d134b901629138))
+
 # [3.2.0](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.1.12...v3.2.0) (2021-03-06)
 
 
