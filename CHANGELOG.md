@@ -1,3 +1,10 @@
+## [3.2.3](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.2...v3.2.3) (2021-03-29)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump y18n from 4.0.0 to 4.0.1 ([522bfd5](https://github.com/eliasnorrby/dotfiles-cli/commit/522bfd54585e969d6326cf82b7bd701ddb35d340))
+
 ## [3.2.2](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.1...v3.2.2) (2021-03-29)
 
 
