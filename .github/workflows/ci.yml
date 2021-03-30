@@ -12,9 +12,10 @@ jobs:
         with:
           node-version: '14.x'
       - run: npm ci
-      - run: npm test
+      - run: npm run test:coverage
         env:
           CI: true
+      - uses: codecov/codecov-action@v1
 
   release:
     if: github.ref == 'refs/heads/master'

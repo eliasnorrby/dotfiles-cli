@@ -134,6 +134,8 @@ description: apply MacOS defaults
 [github-actions-link]: https://github.com/eliasnorrby/dotfiles-cli/actions/workflows/ci.yml
 [npm-badge]: https://img.shields.io/npm/v/@eliasnorrby/dotfiles-cli?style=flat
 [npm-link]: https://www.npmjs.com/package/@eliasnorrby/dotfiles-cli
+[codecov-badge]: https://codecov.io/gh/eliasnorrby/dotfiles-cli/branch/master/graph/badge.svg?token=F3GARXDV8H
+[codecov-link]: https://codecov.io/gh/eliasnorrby/dotfiles-cli
 [dependabot-badge]: https://api.dependabot.com/badges/status?host=github&repo=eliasnorrby/dotfiles-cli
 [dependabot-link]: https://dependabot.com
 [semantic-release-badge]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg

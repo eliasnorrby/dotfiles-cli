@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "program": "node ./lib/index.js",
     "build": "tsc -p .",
     "semantic-release": "semantic-release",
