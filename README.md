@@ -1,7 +1,8 @@
-[![Travis][travis-badge]][travis-link]
 [![npm][npm-badge]][npm-link]
+[![github-actions][github-actions-badge]][github-actions-link]
 [![Dependabot Status][dependabot-badge]][dependabot-link]
 [![semantic-release][semantic-release-badge]][semantic-release-link]
+[![Conventional Commits][conventional-commits-badge]][conventional-commits-link]
 
 # dotfiles-cli
 
@@ -129,13 +130,15 @@ description: apply MacOS defaults
 
 </details>
 
-[travis-badge]: https://img.shields.io/travis/com/eliasnorrby/dotfiles-cli?style=flat
-[travis-link]: https://travis-ci.com/eliasnorrby/dotfiles-cli
+[github-actions-badge]: https://github.com/eliasnorrby/dotfiles-cli/actions/workflows/ci.yml/badge.svg
+[github-actions-link]: https://github.com/eliasnorrby/dotfiles-cli/actions/workflows/ci.yml
 [npm-badge]: https://img.shields.io/npm/v/@eliasnorrby/dotfiles-cli?style=flat
 [npm-link]: https://www.npmjs.com/package/@eliasnorrby/dotfiles-cli
 [dependabot-badge]: https://api.dependabot.com/badges/status?host=github&repo=eliasnorrby/dotfiles-cli
 [dependabot-link]: https://dependabot.com
 [semantic-release-badge]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-release-link]: https://github.com/semantic-release/semantic-release
+[conventional-commits-badge]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
+[conventional-commits-link]: https://conventionalcommits.org
 [dotfiles-link]: https://github.com/eliasnorrby/dotfiles
 [doom-link]: https://github.com/hlissner/doom-emacs
