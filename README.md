@@ -1,5 +1,6 @@
 [![npm][npm-badge]][npm-link]
 [![github-actions][github-actions-badge]][github-actions-link]
+[![codecov][codecov-badge]][codecov-link]
 [![Dependabot Status][dependabot-badge]][dependabot-link]
 [![semantic-release][semantic-release-badge]][semantic-release-link]
 [![Conventional Commits][conventional-commits-badge]][conventional-commits-link]
