@@ -1,3 +1,10 @@
+## [3.2.4](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.3...v3.2.4) (2021-04-16)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump ssri from 6.0.1 to 6.0.2 ([e07b1a1](https://github.com/eliasnorrby/dotfiles-cli/commit/e07b1a1fa2dbc6ce28f5f014a5abe800d497d440))
+
 ## [3.2.3](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.2...v3.2.3) (2021-03-29)
 
 
