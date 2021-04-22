@@ -1,3 +1,10 @@
+## [3.2.5](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.4...v3.2.5) (2021-04-22)
+
+
+### Bug Fixes
+
+* **deps:** bump chalk from 4.1.0 to 4.1.1 ([cd9c7ec](https://github.com/eliasnorrby/dotfiles-cli/commit/cd9c7ecf1d0b8cf61230c3b0ae7258c57eb32221))
+
 ## [3.2.4](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.3...v3.2.4) (2021-04-16)
 
 
