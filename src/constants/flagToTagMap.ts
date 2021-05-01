@@ -6,11 +6,11 @@ type MapEntry = {
 }
 
 export const pacmanEntry = {
-    tag: 'do_pacman',
-    flag: 'pacman',
-    shortflag: 'm',
-    description: 'install packages with pacman',
-  }
+  tag: 'do_pacman',
+  flag: 'pacman',
+  shortflag: 'm',
+  description: 'install packages with pacman',
+}
 
 export const flagToTagMap: MapEntry[] = [
   {
