@@ -11,7 +11,7 @@ export default function describeTopic(
   const topic = readTopic(settings, argv, topicName)
 
   topic.config = readTopicConfig(settings, topicName)
-  let yamlStr: string = yaml.safeDump({ [topicName]: topic })
+  let yamlStr: string = yaml.dump({ [topicName]: topic })
 
   console.log(highlight(yamlStr, { language: 'yaml', ignoreIllegals: true }))
 }
