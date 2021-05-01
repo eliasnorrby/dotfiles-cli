@@ -17,7 +17,7 @@ export function readConfig(settings: Settings, _argv: any, file?: string) {
       path.resolve(dotfiles, fileToRead),
       'utf8'
     )
-    const data: { topics: TopicGroupList } = yaml.safeLoad(fileContents)
+    const data = yaml.load(fileContents) as { topics: TopicGroupList }
 
     if (data.topics === undefined) {
       log.fail('Could not read config, exiting.')
@@ -31,14 +31,17 @@ export function readConfig(settings: Settings, _argv: any, file?: string) {
   }
 }
 
-export function readTopicConfig(settings: Settings, topicName: string): TopicConfig {
+export function readTopicConfig(
+  settings: Settings,
+  topicName: string
+): TopicConfig {
   const { dotfiles } = settings
   const fileToRead = path.resolve(dotfiles, topicName, 'topic.config.yml')
   const shortName = topicName.split('/')[1]
   const fieldName = shortName + '_config'
   try {
     const fileContents = fs.readFileSync(fileToRead, 'utf8')
-    const data = yaml.safeLoad(fileContents)
+    const data = yaml.load(fileContents) as { [key: string]: TopicConfig }
     if (data[fieldName] === undefined) {
       log.fail(`Could not read config for topic ${topicName}, exiting.`)
       process.exit(1)
@@ -63,7 +66,7 @@ export function writeConfig(
 
   try {
     // convert object to yaml
-    let yamlStr = yaml.safeDump({ topics })
+    let yamlStr = yaml.dump({ topics })
     // format yaml string
     const formattedYamlStr = prettier.format(yamlStr, { parser: 'yaml' })
     // write yaml header
@@ -115,7 +118,7 @@ export function selectTopics(
   }
 
   try {
-    let yamlStr = yaml.safeDump({ topics: temporaryRootConfig })
+    let yamlStr = yaml.dump({ topics: temporaryRootConfig })
     // format yaml string
     const formattedYamlStr = prettier.format(yamlStr, { parser: 'yaml' })
     argv.verbose && log.info('Writing temporary config:')
