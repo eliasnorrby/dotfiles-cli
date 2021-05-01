@@ -1,3 +1,11 @@
+## [3.2.7](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.6...v3.2.7) (2021-05-01)
+
+
+### Bug Fixes
+
+* use new js-yaml methods after version bump ([380dcc6](https://github.com/eliasnorrby/dotfiles-cli/commit/380dcc6b6c22e456a6ce935ceef3662d0a22a9b5))
+* **deps:** bump js-yaml from 3.14.1 to 4.1.0 ([cb00e1e](https://github.com/eliasnorrby/dotfiles-cli/commit/cb00e1e08e61bbeb17a59368972d1d8232ada128))
+
 ## [3.2.6](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.5...v3.2.6) (2021-04-23)
 
 
