@@ -1,3 +1,10 @@
+## [3.2.10](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.9...v3.2.10) (2021-05-10)
+
+
+### Bug Fixes
+
+* **deps:** bump lodash from 4.17.20 to 4.17.21 ([960855d](https://github.com/eliasnorrby/dotfiles-cli/commit/960855d4e41764a923d98994e63393db0ad29dee))
+
 ## [3.2.9](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.8...v3.2.9) (2021-05-04)
 
 
