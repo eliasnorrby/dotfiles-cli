@@ -15,8 +15,8 @@
     "program": "node ./lib/index.js",
     "build": "tsc -p .",
     "semantic-release": "semantic-release",
-    "check-format": "prettier --list-different '**/*.{js,jsx,ts,tsx,html,vue,css,less,scss,graphql,yaml,yml,json,md,mdx}'",
-    "format": "prettier --write '**/*.{js,jsx,ts,tsx,html,vue,css,less,scss,graphql,yaml,yml,json,md,mdx}'",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
     "prepare": "npm run build"
   },
   "repository": {
