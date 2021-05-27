@@ -68,31 +68,55 @@ function pacmanWillBeCalled(argv: any) {
   )
 }
 
-function printSummary(stdout: string) {
+export function formatChangelist(line: string) {
+  const changes: { key: string; value: string }[] = line
+    .split(':')[1]
+    .trim()
+    .split(/ +/)
+    .map((item) => item.split('='))
+    .map((keyvalue) => ({ key: keyvalue[0], value: keyvalue[1] }))
+  let changelist = ''
+  changes.forEach((kv, idx) => {
+    changelist +=
+      kv.key.toUpperCase() +
+      ': ' +
+      kv.value +
+      (idx < changes.length - 1 ? ', ' : '')
+  })
+  return changelist
+}
+
+export function findPlayRecap(lines: string[]) {
+  const range = 15
+  const subset = lines.slice(lines.length - range)
+  const recap = subset.find((l) => l.includes('PLAY RECAP'))
+  if (!recap) return undefined
+  const index = subset.indexOf(recap) + 1 + (lines.length - range)
+  return lines[index]
+}
+
+function simpleSummary(lines: string[]) {
+  const summary = lines.slice(lines.length - 4).join('\n')
+  log.info('Summary')
+  console.log(summary)
+}
+
+export function printSummary(stdout: string) {
   if (!stdout) return
   const lines = stdout.split('\n')
+  const line = findPlayRecap(lines)
+  if (!line) {
+    log.warn('Could not find PLAY RECAP, printing simple summary')
+    simpleSummary(lines)
+    return
+  }
   try {
-    const changes: { key: string; value: string }[] = lines[lines.length - 3]
-      .split(':')[1]
-      .trim()
-      .split(/ +/)
-      .map((item) => item.split('='))
-      .map((keyvalue) => ({ key: keyvalue[0], value: keyvalue[1] }))
-    let changelist = ''
-    changes.forEach((kv, idx) => {
-      changelist +=
-        kv.key.toUpperCase() +
-        ': ' +
-        kv.value +
-        (idx < changes.length - 1 ? ', ' : '')
-    })
+    const changelist = formatChangelist(line)
     log.info(changelist)
   } catch (err) {
     console.log(err)
-    log.warn('Could not print summary falling back to simpler method')
-    const summary = lines.slice(lines.length - 4).join('\n')
-    log.info('Summary')
-    console.log(summary)
+    log.warn('Could not print summary, falling back to simpler method')
+    simpleSummary(lines)
   }
 }
 
