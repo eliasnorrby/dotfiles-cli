@@ -1,3 +1,10 @@
+## [3.2.12](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.11...v3.2.12) (2021-05-27)
+
+
+### Bug Fixes
+
+* search for summary information ([3c41039](https://github.com/eliasnorrby/dotfiles-cli/commit/3c41039911f52c19686029cc7d6151e88653e71a))
+
 ## [3.2.11](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.10...v3.2.11) (2021-05-12)
 
 
