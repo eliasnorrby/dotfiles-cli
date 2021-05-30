@@ -1,3 +1,10 @@
+## [3.2.13](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.12...v3.2.13) (2021-05-30)
+
+
+### Bug Fixes
+
+* **deps:** bump ws from 7.2.5 to 7.4.6 ([86afb36](https://github.com/eliasnorrby/dotfiles-cli/commit/86afb3682aa0f84d8dd2c0686f253d498c6fd6f0))
+
 ## [3.2.12](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.11...v3.2.12) (2021-05-27)
 
 
