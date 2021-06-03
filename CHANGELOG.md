@@ -1,3 +1,10 @@
+## [3.2.15](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.14...v3.2.15) (2021-06-03)
+
+
+### Bug Fixes
+
+* **deps:** bump execa from 5.0.1 to 5.1.0 ([1e0e85b](https://github.com/eliasnorrby/dotfiles-cli/commit/1e0e85bfe59568c8c2da86128a0c4b7768533e7b))
+
 ## [3.2.14](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.13...v3.2.14) (2021-05-31)
 
 
