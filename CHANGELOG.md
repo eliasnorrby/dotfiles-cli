@@ -1,3 +1,10 @@
+## [3.2.17](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.16...v3.2.17) (2021-06-07)
+
+
+### Bug Fixes
+
+* **deps:** bump prettier from 2.3.0 to 2.3.1 ([8452f29](https://github.com/eliasnorrby/dotfiles-cli/commit/8452f294446c29c14f13ee22258ce2f992d9524a))
+
 ## [3.2.16](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.15...v3.2.16) (2021-06-07)
 
 
