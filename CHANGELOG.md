@@ -1,3 +1,10 @@
+## [3.2.19](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.18...v3.2.19) (2021-06-08)
+
+
+### Bug Fixes
+
+* **deps:** bump trim-newlines from 3.0.0 to 3.0.1 ([e03024e](https://github.com/eliasnorrby/dotfiles-cli/commit/e03024ef1c6eb40cf1fb793fc7ee9a784d7a8838))
+
 ## [3.2.18](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.17...v3.2.18) (2021-06-08)
 
 
