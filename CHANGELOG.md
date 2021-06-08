@@ -1,3 +1,10 @@
+## [3.2.18](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.17...v3.2.18) (2021-06-08)
+
+
+### Bug Fixes
+
+* **deps:** bump glob-parent from 5.1.0 to 5.1.2 ([284cf3f](https://github.com/eliasnorrby/dotfiles-cli/commit/284cf3f7885452727423494b36c56fa5ca3113c3))
+
 ## [3.2.17](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.16...v3.2.17) (2021-06-07)
 
 
