@@ -1,3 +1,10 @@
+## [3.2.20](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.19...v3.2.20) (2021-06-09)
+
+
+### Bug Fixes
+
+* **deps:** bump normalize-url from 4.5.0 to 4.5.1 ([902107e](https://github.com/eliasnorrby/dotfiles-cli/commit/902107ec084bdeeaeaff86830db9bee72f81fd82))
+
 ## [3.2.19](https://github.com/eliasnorrby/dotfiles-cli/compare/v3.2.18...v3.2.19) (2021-06-08)
 
 
