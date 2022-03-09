@@ -35,7 +35,7 @@
   "homepage": "https://github.com/eliasnorrby/dotfiles-cli#readme",
   "dependencies": {
     "@eliasnorrby/log-util": "^1.1.0",
-    "chalk": "^4.0.0",
+    "chalk": "^5.0.1",
     "cli-highlight": "^2.1.4",
     "execa": "^5.0.0",
     "js-yaml": "^4.1.0",
